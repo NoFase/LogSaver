@@ -1,9 +1,6 @@
 package ru.siberian.huawei.LogSaver.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -18,6 +15,7 @@ public class Messages {
 
     private String ip;
 
+    @Column(length = 1000)
     private String command;
 
     private Date date;

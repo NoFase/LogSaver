@@ -6,6 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import ru.siberian.huawei.LogSaver.entity.Messages;
 import ru.siberian.huawei.LogSaver.entity.MessagesRepository;
 import ru.siberian.huawei.LogSaver.external.ExternalData;
+import ru.siberian.huawei.LogSaver.managment.LogTimer;
 
 import java.util.Date;
 
@@ -20,6 +21,8 @@ public class LogSaverApplication {
 
 		ExternalData externalData = new ExternalData();
 
-		repository.save(new Messages("SRT",  new Date(), "IM", "10.10.10.10", "LST TG:;"));
+		LogTimer timer = new LogTimer(externalData, repository);
+
+//		repository.save(new Messages("SRT",  new Date(), "IM", "10.10.10.10", "LST TG:;"));
 	}
 }

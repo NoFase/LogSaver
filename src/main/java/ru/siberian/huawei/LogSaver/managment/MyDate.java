@@ -1,5 +1,7 @@
 package ru.siberian.huawei.LogSaver.managment;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,7 +12,7 @@ public class MyDate {
     private SimpleDateFormat form = new SimpleDateFormat("yyyy&MM&dd hh&mm");
     private LocalDateTime localDate;
 
-
+//      yyyy-MM-dd HH:mm:ss+GMC     items[5] + items[6]
     public Date setStartTime(){
         String time[] = form.format(new Date().getTime()).split("\\s+")[0].split("&");
 //        need write check when changing month, and year
@@ -23,5 +25,25 @@ public class MyDate {
     }
     public String localDate(){
         return form.format(new Date().getTime());
+    }
+
+    public Date convertingStringToDate(String stringTime){
+        DateFormat form = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if (stringTime.length() > 20) stringTime = stringTime.substring(0, 19);
+        try {
+            return form.parse(stringTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return new Date();
+    }
+
+    public String convertLocalDateTimeToString(LocalDateTime localDateTime){
+        return localDateTime.getYear() + "&"
+                + localDateTime.getMonthValue() + "&"
+                + localDateTime.getDayOfMonth() + "&"
+                + localDateTime.getHour() + "&"
+                + localDateTime.getMinute() + "&"
+                + localDateTime.getSecond();
     }
 }

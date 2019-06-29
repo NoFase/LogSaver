@@ -4,6 +4,8 @@ import ru.siberian.huawei.LogSaver.entity.Messages;
 import ru.siberian.huawei.LogSaver.entity.MessagesRepository;
 import ru.siberian.huawei.LogSaver.network.TCPConnection;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +22,19 @@ public class InputAnalyzer {
     }
 
     public void analysis(String line, TCPConnection tcpConnection){
-        if (line.contains("logged in successfully")) tcpConnection.sendString("LST CMDLOG: QM=Important;");
+        if (line.contains("logged in successfully")) tcpConnection.sendString("DSP TIME:;");
+        if (line.contains("Current time of system")){
+            String[] timeString = line.split("=")[1].split("\\s+");
+            Date dateStart = new MyDate().
+                    convertingStringToDate(timeString[0].trim() + " " + timeString[1].trim());
+            LocalDateTime localDateTime = dateStart.toInstant()
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalDateTime();
+
+            tcpConnection.sendString("LST CMDLOG: " +
+                    new MyDate().convertLocalDateTimeToString(localDateTime.minusDays(1)) +
+                    "QM=Important;");
+        }
         else if (line.contains("Number of results =")) tcpConnection.disconnect();
         else {
             int count = 0;
@@ -33,7 +47,11 @@ public class InputAnalyzer {
 //      установить дату
                     if (longLine.contains(compare) || lineCommand.contains(compare)) count = exceptions.size();
                     if (count == exceptions.size() - 1) {
-                        repository.save(new Messages(cityName, new Date(), items[2], items[3], lineCommand));
+                        repository.save(new Messages(cityName,
+                                new MyDate().convertingStringToDate(items[5] + " " + items[6]),
+                                items[2],
+                                items[3],
+                                lineCommand));
                     }
                 }
                 count++;

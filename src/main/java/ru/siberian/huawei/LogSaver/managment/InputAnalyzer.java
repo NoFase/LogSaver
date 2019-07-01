@@ -25,15 +25,15 @@ public class InputAnalyzer {
         if (line.contains("logged in successfully")) tcpConnection.sendString("DSP TIME:;");
         if (line.contains("Current time of system")){
             String[] timeString = line.split("=")[1].split("\\s+");
-            Date dateStart = new MyDate().
-                    convertingStringToDate(timeString[0].trim() + " " + timeString[1].trim());
+            String dateOutString = timeString[1].trim() + " " + timeString[2].trim();
+            Date dateStart = new MyDate().convertingStringToDate(dateOutString);
             LocalDateTime localDateTime = dateStart.toInstant()
                     .atZone(ZoneId.systemDefault())
                     .toLocalDateTime();
-
-            tcpConnection.sendString("LST CMDLOG: " +
+            String commandString = "LST CMDLOG: ST=" +
                     new MyDate().convertLocalDateTimeToString(localDateTime.minusDays(1)) +
-                    "QM=Important;");
+                    ", QM=Important;";
+            tcpConnection.sendString(commandString);
         }
         else if (line.contains("Number of results =")) tcpConnection.disconnect();
         else {

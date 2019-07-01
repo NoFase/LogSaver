@@ -51,7 +51,7 @@ public class ConnectToServer extends Thread implements TCPConnectionListener{
 
     @Override
     public void onDisconnect(TCPConnection tcpConnection) {
-
+        System.out.println("disconnected from: " + serverIp);
     }
 
     @Override

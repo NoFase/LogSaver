@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ru.siberian.huawei.LogSaver.LogSaverApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.497 s - in ru.siberian.huawei.LogSaver.LogSaverApplicationTests

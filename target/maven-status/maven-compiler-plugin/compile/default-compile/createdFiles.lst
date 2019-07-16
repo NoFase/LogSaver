@@ -1,0 +1,14 @@
+ru\siberian\huawei\LogSaver\managment\LogTimer$1.class
+ru\siberian\huawei\LogSaver\network\TCPConnection.class
+ru\siberian\huawei\LogSaver\managment\MyDate.class
+ru\siberian\huawei\LogSaver\managment\InputAnalyzer.class
+ru\siberian\huawei\LogSaver\network\TCPConnection$1.class
+ru\siberian\huawei\LogSaver\external\ListOfServers.class
+ru\siberian\huawei\LogSaver\entity\MessagesRepository.class
+ru\siberian\huawei\LogSaver\network\TCPConnectionListener.class
+ru\siberian\huawei\LogSaver\external\ListOfExceptions.class
+ru\siberian\huawei\LogSaver\LogSaverApplication.class
+ru\siberian\huawei\LogSaver\entity\Messages.class
+ru\siberian\huawei\LogSaver\external\ExternalData.class
+ru\siberian\huawei\LogSaver\managment\LogTimer.class
+ru\siberian\huawei\LogSaver\network\ConnectToServer.class

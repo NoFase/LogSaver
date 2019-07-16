@@ -18,11 +18,11 @@ public class LogTimer {
 
 
 
-//        Date date = new MyDate().setStartTime();
-//
-//        TimerTask timerTask = new TimerTask() {
-//            @Override
-//            public void run() {
+        Date date = new MyDate().setStartTime();
+
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
 //  здесь будет код для старта коннекций
                 for (HashMap.Entry entry: externalData.getServers().entrySet()){
                     ConnectToServer connect = new ConnectToServer();
@@ -32,9 +32,9 @@ public class LogTimer {
                             String.valueOf(entry.getValue())));
                     connect.run();
                 }
-//            }
-//        };
-//        Timer timer = new Timer();
-//        timer.schedule(timerTask, date, LONGDAYBYSECONDS);
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(timerTask, date, LONGDAYBYSECONDS);
     }
 }

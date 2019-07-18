@@ -8,6 +8,7 @@ import ru.siberian.huawei.LogSaver.managment.AnalyzerFromFiles;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Paths;
@@ -16,6 +17,8 @@ import javax.servlet.http.*;
 
 @Controller
 public class MainController {
+
+    private AnalyzerFromFiles analyzerFromFiles;
 
 //    ---------------------main menu----------------------
     @GetMapping
@@ -27,24 +30,18 @@ public class MainController {
     @PostMapping
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
+
 //        response.getWriter().println(request.getParameter("data"));
         Part filePart = request.getPart("file");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        System.out.println(fileName);
-        InputStreamReader reader = new InputStreamReader(filePart.getInputStream());
-        int c;
-        String line = "";
-        int count = 0;
-        while ((c=reader.read()) > 0) {
-//            response.getWriter().print((char)c);
-            line += (char)c;
-//            System.out.println(count++);
-//            System.out.println(line);
-            new AnalyzerFromFiles(fileName, line);
+        analyzerFromFiles = new AnalyzerFromFiles(fileName);
+
+//        InputStreamReader reader = new InputStreamReader(filePart.getInputStream());
+        BufferedReader br = new BufferedReader(new InputStreamReader(filePart.getInputStream()));
+
+        while (br.ready()) {
+            analyzerFromFiles.checking(br.readLine());
         }
-//        String[] lines = line.split("\n");
-//        System.out.println(lines.length);
-//        for (String l: lines) System.out.println(l);
     }
 
 }

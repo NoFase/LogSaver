@@ -10,10 +10,12 @@ import ru.siberian.huawei.LogSaver.managment.LogTimer;
 @SpringBootApplication
 
 public class LogSaverApplication {
+	public static MessagesRepository repos;
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(LogSaverApplication.class);
 		MessagesRepository repository = context.getBean(MessagesRepository.class);
+		repos = repository;
 
 //		new IconForTray();
 //		System.out.println("<<<<<------REWRING BD FILE------>>>>>");

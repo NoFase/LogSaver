@@ -15,7 +15,7 @@ public class Messages {
 
     private String ip;
 
-    @Column(length = 1000)
+    @Column(length = 10000)
     private String command;
 
     private Date date;

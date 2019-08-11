@@ -1,5 +1,6 @@
 D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\managment\InputAnalyzer.java
 D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\MainController.java
+D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\managment\FilterBd.java
 D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\network\TCPConnectionListener.java
 D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\external\ListOfServers.java
 D:\programming\Java\LogSaver\src\main\java\ru\siberian\huawei\LogSaver\entity\Messages.java

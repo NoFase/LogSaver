@@ -38,6 +38,17 @@ public class MyDate {
         return new Date();
     }
 
+    public Date convertingStringToDateWithoutTime(String stringTime){
+        DateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+        if (stringTime.length() > 20) stringTime = stringTime.substring(0, 19);
+        try {
+            return form.parse(stringTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return new Date();
+    }
+
     public String convertLocalDateTimeToString(LocalDateTime localDateTime){
         return localDateTime.getYear() + "&"
                 + localDateTime.getMonthValue() + "&"

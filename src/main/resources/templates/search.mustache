@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,17 +6,28 @@
 </head>
 <body>
 
-<form method="post" action="printHello">
-<h2>{{message}}</h2>
-</form>
+<div>
+    <form method="post" action="filter">
+        <p> Введите аббревиатуру города: <input type="text" name="abrCity" placeholder="City"/>
+            Выбирете дату:   <input type="date" name="dateStart">
+                             <input type="date" name="dateEnd">
+            Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>
+        <input type="submit" value="Find"></p>
+    </form>
+</div>
 
-<form method="post" action="filter">
+<div>result of search:</div>
+<div>
+
+</div>
+<div>
+    {{# message}}
+    <p>{{.}}</p>
+    {{/ message}}
+</div>
 
 
-    <p>Выбирете дату:   <input type="date" name="calendar">
-                        <input type="date" name="calendar1">
-        <input type="submit" value="Send"></p>
-</form>
+
 
 </body>
 </html>

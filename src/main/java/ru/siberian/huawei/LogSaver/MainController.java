@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import ru.siberian.huawei.LogSaver.external.ListOfServers;
 import ru.siberian.huawei.LogSaver.managment.AnalyzerFromFiles;
+import ru.siberian.huawei.LogSaver.managment.FilterBd;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import javax.servlet.http.*;
 
 @Controller
@@ -55,25 +53,16 @@ public class MainController {
         model.put("search", search);
         return "search";
     }
-//
-//    @RequestMapping (value = "/all", method = RequestMethod.GET)
-//    public String getAll(Map<String, Object> model){
-//        ListOfServers listOfServers = new ListOfServers();
-//        List<String> citys = new ArrayList<>();
-//        for(HashMap.Entry<String, String> c: listOfServers.getServers().entrySet()){
-//            citys.add(c.getValue());
-//            System.out.println(c.getValue());
+
+    @PostMapping("filter")
+    public String filter(@RequestParam String sign, @RequestParam String abrCity, @RequestParam String dateStart,
+            @RequestParam String dateEnd, Map<String, Object> model){
+//        String out = abrCity + " " + sign + " " + dateStart + " " + dateEnd;
+        List<String> searcher = new FilterBd(abrCity, dateStart, dateEnd, sign).searching();
+//        for (String out: searcher) {
+            model.put("message", searcher);
 //        }
-//        String[] s = (String[]) citys.toArray();
-//        model.put("city", s);
-//        return "search";
-//    }
-
-    @PostMapping("/search")
-    public String printHello(Map<String, Object> model) {
-        model.put("message", "Hello Spring MVC Framework!");
-        return "hello";
+//        model.put("asign", "TRATATA");
+        return "search";
     }
-
-
 }

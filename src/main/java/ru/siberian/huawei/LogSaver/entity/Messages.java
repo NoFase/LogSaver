@@ -23,6 +23,26 @@ public class Messages {
     public Messages() {
     }
 
+    public String getCityName() {
+        return cityName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
     public Messages(String cityName, Date date, String login, String ip, String command) {
         this.cityName = cityName;
         this.date = date;

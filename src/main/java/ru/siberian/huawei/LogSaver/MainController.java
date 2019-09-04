@@ -1,10 +1,8 @@
 package ru.siberian.huawei.LogSaver;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import ru.siberian.huawei.LogSaver.external.ListOfServers;
+import ru.siberian.huawei.LogSaver.external.AbrOfServers;
 import ru.siberian.huawei.LogSaver.managment.AnalyzerFromFiles;
 import ru.siberian.huawei.LogSaver.managment.FilterBd;
 
@@ -50,6 +48,8 @@ public class MainController {
     @GetMapping("/search")
     public String search(Map<String, Object> model){
         Object search = new Object();
+        List<String> abrServers = new AbrOfServers().getAbrServers();
+        model.put("abrServers", abrServers);
         model.put("search", search);
         return "search";
     }
@@ -57,12 +57,10 @@ public class MainController {
     @PostMapping("filter")
     public String filter(@RequestParam String sign, @RequestParam String abrCity, @RequestParam String dateStart,
             @RequestParam String dateEnd, Map<String, Object> model){
-//        String out = abrCity + " " + sign + " " + dateStart + " " + dateEnd;
         List<String> searcher = new FilterBd(abrCity, dateStart, dateEnd, sign).searching();
-//        for (String out: searcher) {
-            model.put("message", searcher);
-//        }
-//        model.put("asign", "TRATATA");
+        List<String> abrServers = new AbrOfServers().getAbrServers();
+        model.put("abrServers", abrServers);
+        model.put("message", searcher);
         return "search";
     }
 }

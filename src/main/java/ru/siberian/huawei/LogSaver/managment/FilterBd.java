@@ -26,7 +26,6 @@ public class FilterBd {
     public List<String> searching() {
         searcher = new ArrayList<>();
         if (abrCity.length() > 1) {
-            System.out.println(abrCity + "--------");
             if (dateStart.length() > 1 && dateEnd.length() > 1) {
                 Date dateStartD = new MyDate().convertingStringToDateWithoutTime(dateStart);
                 Date dateEndD = new MyDate().convertingStringToDateWithoutTime(dateEnd);
@@ -35,7 +34,8 @@ public class FilterBd {
                 } else {
                     messages = repos.findWithoutCommand(abrCity, dateStartD, dateEndD);
                 }
-            } else messages = repos.findOnlyCity(abrCity);
+            } else if (sign.length() > 1) messages = repos.findCityCommand(abrCity, sign);
+            else messages = repos.findOnlyCity(abrCity);
 
 
 

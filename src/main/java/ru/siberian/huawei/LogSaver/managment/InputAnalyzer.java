@@ -47,6 +47,13 @@ public class InputAnalyzer {
 //      установить дату
                     if (longLine.contains(compare) || lineCommand.contains(compare)) count = exceptions.size();
                     if (count == exceptions.size() - 1) {
+//                        if (cityName.contains("NNV")) { // !!!!!!!!!!!!!!!!!!!!!!!!!!!! For Debug
+//                            System.out.println(cityName + "\t" +
+//                                    new MyDate().convertingStringToDate(items[5] + " " + items[6]) + "\t" +
+//                                    items[2] + "\t" +
+//                                    items[3] + "\t" +
+//                                    lineCommand + "\t" + "<==== to base");
+//                        }
                         repository.save(new Messages(cityName,
                                 new MyDate().convertingStringToDate(items[5] + " " + items[6]),
                                 items[2],

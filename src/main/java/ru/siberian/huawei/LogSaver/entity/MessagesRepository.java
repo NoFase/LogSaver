@@ -18,4 +18,7 @@ public interface MessagesRepository extends CrudRepository<Messages, Long> {
 
     @Query(value = "select m from Messages m where m.cityName = :cityName")
     List<Messages> findOnlyCity(@Param("cityName") String cityName);
+
+    @Query(value = "select m from Messages m where m.cityName = :cityName and m.command like concat('%', :command,'%')")
+    List<Messages> findCityCommand(@Param("cityName") String cityName, @Param("command") String command);
 }

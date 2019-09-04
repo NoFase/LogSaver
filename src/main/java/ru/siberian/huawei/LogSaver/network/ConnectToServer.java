@@ -46,7 +46,8 @@ public class ConnectToServer extends Thread implements TCPConnectionListener{
     public void onReceiveString(TCPConnection tcpConnection, String value) {
         if (value == null) tcpConnection.disconnect();
         else analyzer.analysis(value, tcpConnection);
-//        System.out.println(value);
+//        if (serverIp.contains("10.141.139.7")) // !!!!!!!!!!!!!!!!!!!!!!!! For Debug
+//            System.out.println(value);// !!!!!!!!!!!!!!!!!!!!!!!! For Debug
     }
 
     @Override

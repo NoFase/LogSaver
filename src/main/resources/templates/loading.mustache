@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка файлов логов</title>
+    <link rel="stylesheet" href="css\menu.css" />
+</head>
+<body>
+
+<nav>
+    <ul class="clearfix">
+        <li><a href="\">Main</a></li>
+        <li><a href="\search">Search</a></li>
+        <li><a href="\loading">Loading</a></li>
+        <li><a href="#">SE2900</a>
+            <ul>
+                <li><a href="#">Adding</a> </li>
+                <li><a href="#">Listing</a> </li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+<div class="main">
+    <h2>
+        {{some}}
+    </h2>
+        <form action="upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
+</div>
+
+</body>

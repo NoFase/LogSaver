@@ -1,63 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--    <meta charset="utf-8">-->
+    <meta charset="utf-8">
     <title>Поиск логов</title>
-<!--    <link rel="stylesheet" href="D:\programming\Java\LogSaver\src\main\resources\templates\CSS\style.css">-->
-    <style>
-        /* задаем относительное позиционирование контейнеру */
-        .block{position:relative;}
-        /* Оформление скрытого элемента по умолчанию */
-        .hidden
-        {display: none;
-        position: absolute;
-        bottom: 130%;
-        left: 0px;
-        background-color: #fff;
-        color: #3aaeda;
-        padding: 5px;
-        text-align: center;
-        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.16);
-        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.16);
-        box-shadow: 0 1px 1px rgba(0,0,0,.16);
-        font-size: 12px;}
-        /* Дополнительное оформление скрытого элемента(необязательно) */
-        .hover + .hidden:before
-        {content: " ";
-        position: absolute;
-        top: 98%;
-        left: 10%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        height: 0;
-        width: 0;
-        border: 7px solid transparent;
-        border-right: 7px solid #fff;
-        border-color: #fff transparent transparent transparent;
-        z-index: 2;}
-        /* Дополнительное оформление скрытого элемента(необязательно) */
-        .hover + .hidden:after
-        {content: " ";
-        position: absolute;
-        top: 100%;
-        left: 10%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        height: 0;
-        width: 0;
-        border: 7px solid transparent;
-        border-right: 7px solid #fff;
-        border-color: rgba(0,0,0,.16) transparent transparent transparent;
-        z-index: 1;}
-        /* Появление скрытого элемента при наведении */
-        .hover:hover + .hidden{display: block;}
-    </style>
+    <link rel="stylesheet" href="css\menu.css" />
 </head>
 <body>
+<nav>
+    <ul class="clearfix">
+        <li><a href="\">Main</a></li>
+        <li><a href="\search">Search</a></li>
+        <li><a href="\loading">Loading</a></li>
+        <li><a href="#">SE2900</a>
+            <ul>
+                <li><a href="#">Adding</a> </li>
+                <li><a href="#">Listing</a> </li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
 
-<div>
+<div class="main">
+    <h2>
+        {{some}}
+    </h2>
     <form method="post" action="filter">
         <p> Выбрете город
         <select name="abrCity" size="1">
@@ -77,13 +45,8 @@
 <!--        </div>-->
 </div>
 
-<div>result of search:
+<div class="main"> result of search:
 <p>-------------------------------------------------------------------------</p>
-</div>
-<div>
-
-</div>
-<div>
     {{# message}}
     <p>{{.}}</p>
     {{/ message}}

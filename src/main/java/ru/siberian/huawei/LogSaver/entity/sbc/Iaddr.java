@@ -20,9 +20,9 @@ public class Iaddr implements Commandared{
     public Iaddr(String signalingAddressName, String ipAddressV4, String vrfName) {
         if (signalingAddressName.length() < 32) this.signalingAddressName = signalingAddressName;
 //        !!!!!!!!!!!!! NEED OUTPUT ALARM ABOUT NOT CORRECT DATA
-        else System.out.println("ERROR name IADDR");
+        else System.out.println("ERROR name - Iaddr: " + signalingAddressName);
         if (Pattern.matches(regexIp, ipAddressV4)) this.ipAddressV4 = ipAddressV4;
-        else System.out.println("ERROR ip address");
+        else System.out.println("ERROR ip address - Iaddr");
         this.vrfName = vrfName;
     }
 

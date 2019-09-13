@@ -23,7 +23,7 @@ public class Isiptg implements Commandared{
     private String laddrn;
     private String meddn;
 //    Heartbeat detection
-    private CHB chb;
+    private String chb;
 //    Inbound trunk route name
     private String rnit;
 //    CAC policy set name (max 3)
@@ -33,7 +33,7 @@ public class Isiptg implements Commandared{
 //    Outbound HMR policy set ID
     private String opSetId;
 //    List ignored ports for inbound trunk (Y/N)
-    private QRYITNPORT qryitnport;
+    private String qryitnport;
 
     private enum CHB {
         DISHB,
@@ -53,7 +53,7 @@ public class Isiptg implements Commandared{
         this.tgName = tgName;
         this.lport = lport;
         if (Pattern.matches(regexIp, pipV4)) this.pipV4 = pipV4;
-        else System.out.println("ERROR ip address");
+        else System.out.println("ERROR ip address -Isiptg");
         this.pport = pport;
     }
 
@@ -81,7 +81,7 @@ public class Isiptg implements Commandared{
         return meddn;
     }
 
-    public CHB getChb() {
+    public String getChb() {
         return chb;
     }
 
@@ -101,7 +101,7 @@ public class Isiptg implements Commandared{
         return opSetId;
     }
 
-    public QRYITNPORT getQryitnport() {
+    public String getQryitnport() {
         return qryitnport;
     }
 
@@ -125,7 +125,7 @@ public class Isiptg implements Commandared{
         this.meddn = meddn;
     }
 
-    public void setChb(CHB chb) {
+    public void setChb(String chb) {
         this.chb = chb;
     }
 
@@ -145,7 +145,7 @@ public class Isiptg implements Commandared{
         this.opSetId = opSetId;
     }
 
-    public void setQryitnport(QRYITNPORT qryitnport) {
+    public void setQryitnport(String qryitnport) {
         this.qryitnport = qryitnport;
     }
 

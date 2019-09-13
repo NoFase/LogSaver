@@ -8,9 +8,9 @@ public class Iofc implements Commandared{
     private String tg1Name;
 
     public Iofc(String ofcName, String tg1Name) {
-        if (ofcName.length() < 31) this.ofcName = ofcName;
+        if (ofcName.length() < 32) this.ofcName = ofcName;
 //        !!!!!!!!!!!!! NEED OUTPUT ALARM ABOUT NOT CORRECT DATA
-        else System.out.println("ERROR name length");
+        else System.out.println("ERROR name length - Iofc: " + ofcName);
         this.tg1Name = tg1Name;
     }
 

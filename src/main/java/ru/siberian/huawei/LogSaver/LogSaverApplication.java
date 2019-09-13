@@ -9,7 +9,9 @@ import ru.siberian.huawei.LogSaver.entity.sbc.Iaddr;
 import ru.siberian.huawei.LogSaver.entity.sbc.Irt;
 import ru.siberian.huawei.LogSaver.entity.sbc.Isiptg;
 import ru.siberian.huawei.LogSaver.external.ExternalData;
+import ru.siberian.huawei.LogSaver.external.LoadConfigSbc;
 import ru.siberian.huawei.LogSaver.managment.LogTimer;
+import ru.siberian.huawei.LogSaver.process.ConfiguratorCustomersOnSbc;
 
 import java.util.Arrays;
 
@@ -23,7 +25,7 @@ public class LogSaverApplication {
 		MessagesRepository repository = context.getBean(MessagesRepository.class);
 		repos = repository;
 
-
+        new ConfiguratorCustomersOnSbc();
 
 //		new IconForTray();
 //		System.out.println("<<<<<------REWRING BD FILE------>>>>>");

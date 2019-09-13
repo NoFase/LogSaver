@@ -13,9 +13,9 @@ public class Irt implements Commandared{
     private String snot;
 
     public Irt(String rtName, List<String> ofcNames, String snot) {
-        if (rtName.length() < 31) this.rtName = rtName;
+        if (rtName.length() < 32) this.rtName = rtName;
 //        !!!!!!!!!!!!! NEED OUTPUT ALARM ABOUT NOT CORRECT DATA
-        else System.out.println("ERROR name length");
+        else System.out.println("ERROR name length - IRT: " + rtName);
         this.ofcNames = ofcNames;
 //        this.pOfcList = pOfcList;
         this.snot = snot;

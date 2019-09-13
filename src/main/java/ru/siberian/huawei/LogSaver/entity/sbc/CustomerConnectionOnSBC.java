@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CustomerConnectionOnSBC {
     private List<OneS> oneSList;
-    private Iaddr iaddr;
+    private List<Iaddr> iaddr;
     private List<Isiptg> isiptgList;
     private List<Iofc> iofcList;
     private List<Irt> irtList;
@@ -35,11 +35,20 @@ public class CustomerConnectionOnSBC {
         this.reason = reason;
     }
 
+    public CustomerConnectionOnSBC(List<OneS> oneSList, List<Iaddr> iaddr, List<Isiptg> isiptgList, List<Iofc> iofcList, List<Irt> irtList) {
+        this.oneSList = oneSList;
+        this.iaddr = iaddr;
+        this.isiptgList = isiptgList;
+        this.iofcList = iofcList;
+        this.irtList = irtList;
+    }
+
+
     public List<OneS> getOneSList() {
         return oneSList;
     }
 
-    public Iaddr getIaddr() {
+    public List<Iaddr> getIaddr() {
         return iaddr;
     }
 
@@ -85,7 +94,7 @@ public class CustomerConnectionOnSBC {
         String nameForIADDR = "SIG_ADDR_" + city;
         if (typeOfService.equals("MK")  || typeOfService.equals("FMTN")) nameForIADDR += "-MSS-" + customerName;
         else nameForIADDR += "-" + customerName;
-        iaddr = new Iaddr(nameForIADDR, coreIpAddress, coreVrf);
+        iaddr.add(new Iaddr(nameForIADDR, coreIpAddress, coreVrf));
 
 
     }

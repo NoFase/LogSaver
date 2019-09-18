@@ -11,12 +11,15 @@ public class ConfiguratorCustomersOnSbc {
 
     public ConfiguratorCustomersOnSbc() {
         LoadConfigSbc loadConfigSbc = new LoadConfigSbc();
+        loadConfigSbc.loadingConfigSbc();
+        Map<String, Irt> irtMap = new HashMap<>();
+
 //        STAGE 1
 //      прогоняем все IRT
         for (Map.Entry<String, Irt> irt : loadConfigSbc.getIrts().entrySet()){
+            if (irtMap.containsKey(irt.getKey())) continue;
             String customerName = irt.getKey();
             List<Iaddr> iaddrs = new ArrayList<>();
-            Map<String, Irt> irtMap = new HashMap<>();
             List<String> iofcs;
             List<Iofc> customerIofc = new ArrayList<>();
             Map<String, Iofc> iofcMap = new HashMap<>();
@@ -80,9 +83,9 @@ public class ConfiguratorCustomersOnSbc {
         }
 
 
-        int count = 0;
-        for (Map.Entry<String, CustomerConnectionOnSBC> cus: customers.entrySet()){
-            System.out.println(count++ + "\t" + cus.getKey());
-        }
+//        int count = 0;
+//        for (Map.Entry<String, CustomerConnectionOnSBC> cus: customers.entrySet()){
+//            System.out.println(count++ + "\t" + cus.getKey() + "\n" + cus.getValue().toString());
+//        }
     }
 }

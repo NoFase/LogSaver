@@ -1,8 +1,25 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.regex.Pattern;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "SBC.vrf")
 public class VRF {
+
+    @Id
+    @Length(min = 1, max = 31)
+    @NotNull
+    @OneToOne(mappedBy = "vrfName", cascade = CascadeType.ALL)
     private String nameOfVrf;
     private String type;
     private String target;
@@ -11,34 +28,6 @@ public class VRF {
     public VRF(String nameOfVrf) {
         this.nameOfVrf = nameOfVrf;
         autoSet();
-    }
-
-    public String getNameOfVrf() {
-        return nameOfVrf;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getTarget() {
-        return target;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setTarget(String target) {
-        this.target = target;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     private void autoSet(){

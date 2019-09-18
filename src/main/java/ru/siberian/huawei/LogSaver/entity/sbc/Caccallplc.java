@@ -1,48 +1,30 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
-public class Caccallplc {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "SBC.caccallplc")
+@EnableJpaAuditing
+@Component
+public class Caccallplc {
+    @Id
+    @Length(min = 1, max = 31)
+    @NotNull
     private String nameCacllplcname;
     private String msn;
     private String mcnt;
     private String mcr;
-
-    public Caccallplc(String nameCacllplcname, String msn, String mcnt, String mcr) {
-        this.nameCacllplcname = nameCacllplcname;
-        this.msn = msn;
-        this.mcnt = mcnt;
-        this.mcr = mcr;
-    }
-
-    public String getNameCacllplcname() {
-        return nameCacllplcname;
-    }
-
-    public void setNameCacllplcname(String nameCacllplcname) {
-        this.nameCacllplcname = nameCacllplcname;
-    }
-
-    public String getMsn() {
-        return msn;
-    }
-
-    public void setMsn(String msn) {
-        this.msn = msn;
-    }
-
-    public String getMcnt() {
-        return mcnt;
-    }
-
-    public void setMcnt(String mcnt) {
-        this.mcnt = mcnt;
-    }
-
-    public String getMcr() {
-        return mcr;
-    }
-
-    public void setMcr(String mcr) {
-        this.mcr = mcr;
-    }
 }

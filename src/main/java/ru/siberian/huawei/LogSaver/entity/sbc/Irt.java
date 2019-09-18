@@ -1,37 +1,39 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "SBC.irt")
 public class Irt implements Commandared{
+
+
 //    only for static routing between some ISIPTG
     private final String RTTYPE = "STATIC";
 
+    @Id
+    @Length(min = 1, max = 31)
+    @NotNull
     private String rtName;
 //    List of office direction names
+    @Embedded
     private List<String> ofcNames;
 //    Outbound trunk selection name
     private String snot;
-
-    public Irt(String rtName, List<String> ofcNames, String snot) {
-        if (rtName.length() < 32) this.rtName = rtName;
-//        !!!!!!!!!!!!! NEED OUTPUT ALARM ABOUT NOT CORRECT DATA
-        else System.out.println("ERROR name length - IRT: " + rtName);
-        this.ofcNames = ofcNames;
-//        this.pOfcList = pOfcList;
-        this.snot = snot;
-    }
-
-    public String getRtName() {
-        return rtName;
-    }
-
-    public List<String> getOfcNames() {
-        return ofcNames;
-    }
-
-    public String getSnot() {
-        return snot;
-    }
 
     @Override
     public String getCommand() {

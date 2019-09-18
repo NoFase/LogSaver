@@ -1,14 +1,30 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.regex.Pattern;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "SBC.isiptg")
 public class Isiptg implements Commandared{
 
     private final String LINKINFO = "UDP";
     private final String PIPTYPE = "IPV4";
 
 //    data to be specified
+    @Id
+    @Length(min = 1, max = 31)
+    @NotNull
+    @OneToOne(mappedBy = "tg1Name", cascade = CascadeType.ALL)
     private String tgName;
 //    Local port number
     private String lport;
@@ -17,16 +33,18 @@ public class Isiptg implements Commandared{
 //    Peer port number
     private String pport;
 
-
 //    data to be selected
 //    Local address name
-    private String laddrn;
+//    private String laddrn;
+    @Embedded
+    private Iaddr laddrn;
     private String meddn;
 //    Heartbeat detection
     private String chb;
 //    Inbound trunk route name
     private String rnit;
 //    CAC policy set name (max 3)
+    @Embedded
     private List<String> cacPlcSetNameList;
 //    InboundHMR policy set ID
     private String ipSetId;
@@ -35,19 +53,8 @@ public class Isiptg implements Commandared{
 //    List ignored ports for inbound trunk (Y/N)
     private String qryitnport;
 
-    private enum CHB {
-        DISHB,
-        CTHB,
-        HRHB,
-        SRVHB
-    }
-
-    private enum QRYITNPORT{
-        Y,
-        N
-    }
-
-    private String regexIp = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+    @Transient
+    private final String regexIp = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
 
     public Isiptg(String tgName, String lport, String pipV4, String pport) {
         this.tgName = tgName;
@@ -57,98 +64,7 @@ public class Isiptg implements Commandared{
         this.pport = pport;
     }
 
-    public String getTgName() {
-        return tgName;
-    }
-
-    public String getLport() {
-        return lport;
-    }
-
-    public String getPipV4() {
-        return pipV4;
-    }
-
-    public String getPport() {
-        return pport;
-    }
-
-    public String getLaddrn() {
-        return laddrn;
-    }
-
-    public String getMeddn() {
-        return meddn;
-    }
-
-    public String getChb() {
-        return chb;
-    }
-
-    public String getRnit() {
-        return rnit;
-    }
-
-    public List<String> getCacPlcSetNameList() {
-        return cacPlcSetNameList;
-    }
-
-    public String getIpSetId() {
-        return ipSetId;
-    }
-
-    public String getOpSetId() {
-        return opSetId;
-    }
-
-    public String getQryitnport() {
-        return qryitnport;
-    }
-
-    public void setLport(String lport) {
-        this.lport = lport;
-    }
-
-    public void setPipV4(String pipV4) {
-        this.pipV4 = pipV4;
-    }
-
-    public void setPport(String pport) {
-        this.pport = pport;
-    }
-
-    public void setLaddrn(String laddrn) {
-        this.laddrn = laddrn;
-    }
-
-    public void setMeddn(String meddn) {
-        this.meddn = meddn;
-    }
-
-    public void setChb(String chb) {
-        this.chb = chb;
-    }
-
-    public void setRnit(String rnit) {
-        this.rnit = rnit;
-    }
-
-    public void setCacPlcSetNameList(List<String> cacPlcSetNameList) {
-        this.cacPlcSetNameList = cacPlcSetNameList;
-    }
-
-    public void setIpSetId(String ipSetId) {
-        this.ipSetId = ipSetId;
-    }
-
-    public void setOpSetId(String opSetId) {
-        this.opSetId = opSetId;
-    }
-
-    public void setQryitnport(String qryitnport) {
-        this.qryitnport = qryitnport;
-    }
-
+    @Transient
     @Override
     public String getCommand() {
         if (ipSetId != null && opSetId != null)

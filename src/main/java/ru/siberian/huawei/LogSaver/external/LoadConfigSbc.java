@@ -1,6 +1,9 @@
 package ru.siberian.huawei.LogSaver.external;
 
+import lombok.Getter;
+import ru.siberian.huawei.LogSaver.LogSaverApplication;
 import ru.siberian.huawei.LogSaver.entity.sbc.*;
+import ru.siberian.huawei.LogSaver.repository.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,7 +15,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoadConfigSbc {
+@Getter
+public class LoadConfigSbc{
+
+    private CaccallplcRepository caccallplcRepository = LogSaverApplication.context.getBean(CaccallplcRepository.class);
+    private CacplcsetRepository cacplcsetRepository = LogSaverApplication.context.getBean(CacplcsetRepository.class);
+    private IaddrRepository iaddrRepository = LogSaverApplication.context.getBean(IaddrRepository.class);
+    private IofcRepository iofcRepository = LogSaverApplication.context.getBean(IofcRepository.class);
+    private IrtRepository irtRepository = LogSaverApplication.context.getBean(IrtRepository.class);
+    private IsiptgRepository isiptgRepository = LogSaverApplication.context.getBean(IsiptgRepository.class);
+    private OneSRepository oneSRepository = LogSaverApplication.context.getBean(OneSRepository.class);
+    private VrfRepository vrfRepository = LogSaverApplication.context.getBean(VrfRepository.class);
 
     private Map<String, VRF> vrfs = new HashMap<>();
     private Map<String, Iaddr> iaddrs = new HashMap<>();
@@ -23,7 +36,11 @@ public class LoadConfigSbc {
     private Map<String, Cacplcset> cacplcsets = new HashMap<>();
 
     public LoadConfigSbc() {
+    }
+
+    public void loadingConfigSbc() {
         List<String> lines = new ArrayList<>();
+
         try {
             BufferedReader br = new BufferedReader(new FileReader(Paths.get("").toAbsolutePath().toString() + "/ALLME_20190910133235.txt"));
             while (br.ready()){
@@ -44,39 +61,13 @@ public class LoadConfigSbc {
         }
     }
 
-    public Map<String, VRF> getVrfs() {
-        return vrfs;
-    }
-
-    public Map<String, Iaddr> getIaddrs() {
-        return iaddrs;
-    }
-
-    public Map<String, Isiptg> getIsiptgs() {
-        return isiptgs;
-    }
-
-    public Map<String, Iofc> getIofcs() {
-        return iofcs;
-    }
-
-    public Map<String, Irt> getIrts() {
-        return irts;
-    }
-
-    public Map<String, Caccallplc> getCaccallplcs() {
-        return caccallplcs;
-    }
-
-    public Map<String, Cacplcset> getCacplcsets() {
-        return cacplcsets;
-    }
-
     private void searchingVrf(String line){
         line = line.substring(16, line.length());
         String[] lineM = line.split(",");
         line = lineM[0].replace("\"", "");
-        vrfs.put(line, new VRF(line));
+        VRF vrf = new VRF(line);
+        vrfs.put(line, vrf);
+        vrfRepository.save(vrf);
     }
 
     private void searchingIaddr(String line){
@@ -88,7 +79,9 @@ public class LoadConfigSbc {
             if (part.contains("IPV4=")) ipAddress = splitAndReplace(part);
             if (part.contains("VRFNAME=")) vrfName = splitAndReplace(part);
         }
-        iaddrs.put(nameIaddr, new Iaddr(nameIaddr, ipAddress, vrfName));
+        Iaddr iaddr = new Iaddr(nameIaddr, ipAddress, vrfName);
+        iaddrs.put(nameIaddr, iaddr);
+        iaddrRepository.save(iaddr);
     }
 
     private void searchingIsiptg(String line){
@@ -124,7 +117,7 @@ public class LoadConfigSbc {
         }
 
         Isiptg isiptg = new Isiptg(nameIsiptg, lport, pipV4, pport);
-            isiptg.setLaddrn(laddrn);
+            isiptg.setLaddrn(iaddrs.get(laddrn));
             isiptg.setMeddn(meddn);
             isiptg.setChb(chb);
             isiptg.setRnit(rnit);
@@ -133,6 +126,7 @@ public class LoadConfigSbc {
             isiptg.setOpSetId(opSetId);
             isiptg.setQryitnport(qryitnport);
         isiptgs.put(nameIsiptg, isiptg);
+        isiptgRepository.save(isiptg);
     }
 
     private void searchingIofc(String line){
@@ -140,7 +134,9 @@ public class LoadConfigSbc {
         String[] lineM = line.split(",");
         String nameIofc = splitAndReplace(lineM[0]);
         String nameIsiptg = splitAndReplace(lineM[1]);
-        iofcs.put(nameIofc, new Iofc(nameIofc, nameIsiptg));
+        Iofc iofc = new Iofc(nameIofc, nameIsiptg);
+        iofcs.put(nameIofc, iofc);
+        iofcRepository.save(iofc);
     }
 
     private void searchingIrt(String line){
@@ -154,7 +150,9 @@ public class LoadConfigSbc {
             if (lineM[i].contains("NAME=")) ofcNames.add(splitAndReplace(lineM[i]));
             if (lineM[i].contains("SNOT=")) snot = splitAndReplace(lineM[i]);
         }
-        irts.put(nameIrt, new Irt(nameIrt, ofcNames, snot));
+        Irt irt = new Irt(nameIrt, ofcNames, snot);
+        irts.put(nameIrt, irt);
+        irtRepository.save(irt);
     }
 
     private void searchingCacllplcname(String line){
@@ -164,7 +162,10 @@ public class LoadConfigSbc {
         String msn = splitAndReplace(lineM[1]);
         String mcnt = splitAndReplace(lineM[4]);
         String mcr = splitAndReplace(lineM[11]);
-        caccallplcs.put(nameCacllplcname, new Caccallplc(nameCacllplcname, msn, mcnt, mcr));
+
+        Caccallplc caccallplc = new Caccallplc(nameCacllplcname, msn, mcnt, mcr);
+        caccallplcs.put(nameCacllplcname, caccallplc);
+        caccallplcRepository.save(caccallplc);
     }
 
     private void searchingCacplcset(String line){
@@ -173,7 +174,10 @@ public class LoadConfigSbc {
         String nameCacplcsetname = splitAndReplace(lineM[0]);
         String cacplcsetmode = splitAndReplace(lineM[1]);
         String callplcname = splitAndReplace(lineM[2]);
-        cacplcsets.put(nameCacplcsetname, new Cacplcset(nameCacplcsetname, cacplcsetmode, callplcname));
+
+        Cacplcset cacplcset = new Cacplcset(nameCacplcsetname, cacplcsetmode, callplcname);
+        cacplcsets.put(nameCacplcsetname, cacplcset);
+        cacplcsetRepository.save(cacplcset);
     }
 
 

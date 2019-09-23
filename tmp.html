@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск логов</title>
+<!--    <title>Поиск логов</title>-->
+<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="menu1.css" />
+</head>
+<body>
+
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">WordPress</a></li>
+        <li><a href="#">Graphic Design</a></li>
+        <li><a href="#">Inspiration</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+
+<h2>Поиск логов по фиксированным коммутаторам Huawei</h2>
+
+<div class="main">
+    <form method="post" action="filter">
+            	<p>Введите аббревиатуру города:
+
+	    <input type="text" name="abrCity" placeholder="City"/>
+
+            Выбирете дату:   <input type="date" name="dateStart">
+                             <input type="date" name="dateEnd">
+            Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>
+        <input type="submit" value="Find"></p>
+	    
+
+    </form>
+	    <div class="block">
+            	<p class="hover">наведите на эту надпись, чтобы увидеть список заведенных аббревиатур</p>
+	    	<span class="hidden">Это Подсказка</span>
+	    </div>
+</div>
+
+
+
+
+<div>result of search:</div>
+<div>
+
+</div>
+<div>
+    {{# message}}
+    <p>{{.}}</p>
+    {{/ message}}
+</div>
+
+</body>
+</html>

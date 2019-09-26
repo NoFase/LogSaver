@@ -6,19 +6,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "SBC.caccallplc")
 @EnableJpaAuditing
-@Component
 public class Caccallplc {
     @Id
     @Length(min = 1, max = 31)
@@ -27,4 +24,19 @@ public class Caccallplc {
     private String msn;
     private String mcnt;
     private String mcr;
+
+    @Transient
+    private Cacplcset cacplcset;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "callplcname")
+    public Cacplcset getCacplcset() {
+        return cacplcset;
+    }
+
+    public Caccallplc(@Length(min = 1, max = 31) @NotNull String nameCacllplcname, String msn, String mcnt, String mcr) {
+        this.nameCacllplcname = nameCacllplcname;
+        this.msn = msn;
+        this.mcnt = mcnt;
+        this.mcr = mcr;
+    }
 }

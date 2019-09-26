@@ -19,11 +19,16 @@ public class Iaddr implements Commandared{
 
 //    Only for situation when we are create IADDR for internal IPV4 and for HRU module 151
 //    HRU module ID
+    @Transient
     private final String HRUMID = "151";
 //    Domain Type
+    @Transient
     private final String DMT = "INTERNAL";
+    @Transient
     private final String IPADDRESSTYPE = "IPV4";
+    @Transient
     private final String VRFFLAG = "Y";
+
 
     @Id
     @Length(min = 1, max = 31)
@@ -31,8 +36,21 @@ public class Iaddr implements Commandared{
     private String signalingAddressName;
 
     private String ipAddressV4;
-    @OneToOne(mappedBy = "nameOfVrf")
+
     private String vrfName;
+
+    @OneToOne(mappedBy = "nameOfVrf")
+    public String getVrfName(){
+        return this.vrfName;
+    }
+
+    @Transient
+    private Iofc iofc;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "tg1Name")
+    public Iofc getIofc(){
+        return iofc;
+    }
 
     @Transient
     private final String regexIp = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
@@ -44,6 +62,7 @@ public class Iaddr implements Commandared{
         this.vrfName = vrfName;
     }
 
+    @Transient
     @Override
     public String getCommand() {
         return String.format("ADD IADDR: ADDRNAME=\"%s\", HRUMID=%s, DMT=%s, IPTYPE=%s, " +

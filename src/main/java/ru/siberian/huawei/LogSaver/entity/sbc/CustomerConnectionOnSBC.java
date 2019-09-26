@@ -10,8 +10,8 @@ import java.util.Map;
 //@Table(name = "/SBC/customers")
 public class CustomerConnectionOnSBC {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
 //    @Column(name="1c")

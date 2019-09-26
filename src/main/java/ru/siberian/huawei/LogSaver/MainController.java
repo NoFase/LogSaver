@@ -17,6 +17,7 @@ import java.util.*;
 import javax.servlet.http.*;
 
 @Controller
+@RequestMapping(value = "/")
 public class MainController {
 
     private AnalyzerFromFiles analyzerFromFiles;

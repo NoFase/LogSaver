@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -23,6 +20,7 @@ public class Irt implements Commandared{
 
 
 //    only for static routing between some ISIPTG
+    @Transient
     private final String RTTYPE = "STATIC";
 
     @Id
@@ -30,11 +28,12 @@ public class Irt implements Commandared{
     @NotNull
     private String rtName;
 //    List of office direction names
-    @Embedded
+    @Transient
     private List<String> ofcNames;
 //    Outbound trunk selection name
     private String snot;
 
+    @Transient
     @Override
     public String getCommand() {
         String outputCommand = String.format("ADD IRT: RTNAME=\"%s\", RTTYPE=%s, ", rtName, RTTYPE);

@@ -24,7 +24,7 @@ public class Isiptg implements Commandared{
     @Id
     @Length(min = 1, max = 31)
     @NotNull
-    @OneToOne(mappedBy = "tg1Name", cascade = CascadeType.ALL)
+//    @OneToOne(mappedBy = "tg1Name", cascade = CascadeType.ALL)
     private String tgName;
 //    Local port number
     private String lport;
@@ -36,7 +36,7 @@ public class Isiptg implements Commandared{
 //    data to be selected
 //    Local address name
 //    private String laddrn;
-    @Embedded
+    @Transient
     private Iaddr laddrn;
     private String meddn;
 //    Heartbeat detection
@@ -44,7 +44,7 @@ public class Isiptg implements Commandared{
 //    Inbound trunk route name
     private String rnit;
 //    CAC policy set name (max 3)
-    @Embedded
+    @Transient
     private List<String> cacPlcSetNameList;
 //    InboundHMR policy set ID
     private String ipSetId;

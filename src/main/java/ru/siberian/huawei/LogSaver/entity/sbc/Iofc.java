@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
@@ -28,9 +25,14 @@ public class Iofc implements Commandared{
     @NotNull
     private String ofcName;
 //    Name of 1st trunk group
-    @OneToOne(mappedBy = "tgName")
     private String tg1Name;
 
+    @OneToOne(mappedBy = "tgName")
+    public String getTg1Name(){
+        return this.tg1Name;
+    }
+
+    @Transient
     @Override
     public String getCommand() {
         return String.format("ADD IOFC: OFCNAME=\"%s\", TG1NAME=\"%s\";",

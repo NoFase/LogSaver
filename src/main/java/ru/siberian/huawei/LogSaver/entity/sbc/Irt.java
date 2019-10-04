@@ -46,4 +46,12 @@ public class Irt implements Commandared{
         outputCommand += "SNOT=\"" + snot + "\";";
         return outputCommand;
     }
+
+    @Override
+    public String toString() {
+        return "Irt" + '\t' +
+                rtName + '\'' +
+                ", ofcNames=" + ofcNames +
+                ", snot='" + snot + '\n';
+    }
 }

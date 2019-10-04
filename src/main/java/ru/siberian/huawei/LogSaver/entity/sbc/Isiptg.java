@@ -96,4 +96,21 @@ public class Isiptg implements Commandared{
                     tgName, LINKINFO, laddrn, lport, PIPTYPE, pipV4, pport, meddn, chb, rnit, cacPlcSetNameList.get(0),
                     qryitnport);
     }
+
+    @Override
+    public String toString() {
+        return "Isiptg" + '\t' +
+                tgName + '\'' +
+                ", lport='" + lport + '\'' +
+                ", pipV4='" + pipV4 + '\'' +
+                ", pport='" + pport + '\'' +
+                ", laddrn=" + laddrn +
+                ", meddn='" + meddn + '\'' +
+                ", chb='" + chb + '\'' +
+                ", rnit='" + rnit + '\'' +
+                ", cacPlcSetNameList=" + cacPlcSetNameList +
+                ", ipSetId='" + ipSetId + '\'' +
+                ", opSetId='" + opSetId + '\'' +
+                ", qryitnport='" + qryitnport + '\n';
+    }
 }

@@ -39,4 +39,13 @@ public class Caccallplc {
         this.mcnt = mcnt;
         this.mcr = mcr;
     }
+
+    @Override
+    public String toString() {
+        return "Caccallplc" + '\t' +
+                nameCacllplcname + '\'' +
+                ", msn='" + msn + '\'' +
+                ", mcnt='" + mcnt + '\'' +
+                ", mcr='" + mcr + '\n';
+    }
 }

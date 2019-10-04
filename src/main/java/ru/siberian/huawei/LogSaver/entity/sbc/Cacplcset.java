@@ -28,4 +28,12 @@ public class Cacplcset {
     public String getCallplcname() {
         return callplcname;
     }
+
+    @Override
+    public String toString() {
+        return "Cacplcset" + '\t'
+                + nameCacplcsetname + '\'' +
+                ", cacplcsetmode='" + cacplcsetmode + '\'' +
+                ", callplcname='" + callplcname + '\n';
+    }
 }

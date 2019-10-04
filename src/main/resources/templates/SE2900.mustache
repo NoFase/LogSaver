@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>-->
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,8 +13,19 @@
                 <li><a href="\loading">Loading</a></li>
                 <li><a href="#">SE2900</a>
                     <ul>
-                        <li><a href="#">Adding</a> </li>
-                        <li><a href="\SE2900">Listing</a> </li>
+                        <li><a href="\gag">Adding</a> </li>
+                        <li><a href="\SE2900">Listing</a>
+                            <ul>
+                                <li><a href="sbc\ones">1c</a></li>
+                                <li><a href="\gag">VRF</a></li>
+                                <li><a href="\gag">Irt</a></li>
+                                <li><a href="\gag">Iofc</a></li>
+                                <li><a href="\gag">Iaddr</a></li>
+                                <li><a href="\gag">Isiptg</a></li>
+                                <li><a href="\gag">Cacplset</a></li>
+                                <li><a href="\gag">Caccllplc</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="\h2">Database</a></li>
@@ -22,12 +33,29 @@
             </ul>
         </nav>
 
-        <h2>test test</h2>
         <div class="main">
             <h2>
                 {{some}}
             </h2>
-            <p> test </p>
+            <form method="POST" action="findAllIp">
+                <input type="text" name="sign" placeholder="признак"/>
+
+                <select name="typeOfSearch" size="1">
+                    <option>Iaddr</option>
+                    <option>Iofc</option>
+                    <option>Irt</option>
+                    <option>Isiptg</option>
+                    <option>VRF</option>
+                    <option>1c</option>
+                    <option>Caccllplc</option>
+                    <option>Cacplset</option>
+                </select>
+                <button type="submit">Find</button>
+            </form>
+
+            {{# data}}
+            <p>{{.}}</p>
+            {{/ data}}
         </div>
 
     </body>

@@ -58,4 +58,12 @@ public class VRF {
         }
         if (city == null) setCity("none");
     }
+
+    @Override
+    public String toString() {
+        return "VRF" + '\t' +
+                nameOfVrf + '\'' +
+                ", target='" + target + '\'' +
+                ", city='" + city + '\n';
+    }
 }

@@ -17,4 +17,10 @@ public class OneS {
     @Id
     @NonNull
     private String number;
+
+    @Override
+    public String toString() {
+        return "1c:" + '\t' +
+        number + '\n';
+    }
 }

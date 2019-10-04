@@ -38,4 +38,11 @@ public class Iofc implements Commandared{
         return String.format("ADD IOFC: OFCNAME=\"%s\", TG1NAME=\"%s\";",
                 ofcName, tg1Name);
     }
+
+    @Override
+    public String toString() {
+        return "Iofc" + '\t' +
+                ofcName + '\'' +
+                ", tg1Name='" + tg1Name + '\n';
+    }
 }

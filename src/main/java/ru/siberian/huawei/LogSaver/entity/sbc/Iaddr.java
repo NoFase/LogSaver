@@ -69,4 +69,13 @@ public class Iaddr implements Commandared{
                 "IPV4=\"%s\", VRFFLAG=%s, VRFNAME=\"%s\";",
                 signalingAddressName, HRUMID, DMT, IPADDRESSTYPE, ipAddressV4, VRFFLAG, vrfName);
     }
+
+    @Transient
+    @Override
+    public String toString() {
+        return "Iaddr: " +
+                signalingAddressName +
+                ", ipAddressV4='" + ipAddressV4 + '\'' +
+                ", vrfName='" + vrfName + '\'';
+    }
 }

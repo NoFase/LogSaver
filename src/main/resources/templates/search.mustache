@@ -6,28 +6,39 @@
         <link rel="stylesheet" href="css\menu.css" />
     </head>
     <body>
-        <nav>
-            <ul class="clearfix">
-                <li><a href="\">Main</a></li>
-                <li><a href="\search">Search</a></li>
-                <li><a href="\loading">Loading</a></li>
-                <li><a href="#">SE2900</a>
-                    <ul>
-                        <li><a href="#">Adding</a> </li>
-                        <li><a href="\SE2900">Listing</a> </li>
-                    </ul>
-                </li>
-                <li><a href="\h2">Database</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="clearfix">
+            <li><a href="\">Main</a></li>
+            <li><a href="\search">Search</a></li>
+            <li><a href="\loading">Loading</a></li>
+            <li><a href="#">SE2900</a>
+                <ul>
+                    <li><a href="\gag">Adding</a> </li>
+                    <li><a href="\SE2900">Listing</a>
+                        <ul>
+                            <li><a href="\gag">1c</a></li>
+                            <li><a href="\gag">VRF</a></li>
+                            <li><a href="\gag">Irt</a></li>
+                            <li><a href="\gag">Iofc</a></li>
+                            <li><a href="\gag">Iaddr</a></li>
+                            <li><a href="\gag">Isiptg</a></li>
+                            <li><a href="\gag">Cacplset</a></li>
+                            <li><a href="\gag">Caccllplc</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="\h2">Database</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
 
         <div class="main">
             <h2>
                 {{some}}
             </h2>
             <form method="post" action="filter">
-                <p> Выбрете город
+                <p> Выбрете город</p>
                 <select name="abrCity" size="1">
                     {{# abrServers}}
                     <option> {{.}} </option>
@@ -36,7 +47,7 @@
                 Выбирете дату:   <input type="date" name="dateStart">
                                      <input type="date" name="dateEnd">
                     Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>
-                <input type="submit" value="Find"></select>
+                <input type="submit" value="Find">
             </form>
         <!--        <div class="block">-->
         <!--            <i class="hover">наведите на эту надпись, чтобы увидеть список заведенных аббревиатур</i>-->

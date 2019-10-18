@@ -12,11 +12,9 @@ import ru.siberian.huawei.LogSaver.entity.sbc.Iaddr;
 import ru.siberian.huawei.LogSaver.repository.*;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 @Controller
-//@RequestMapping(value = "/SE2900")
 public class Se2900Controller {
 
     @Autowired
@@ -40,10 +38,10 @@ public class Se2900Controller {
 
     private Iterable<Object> iterable = null;
 
-    @GetMapping("/SE2900")
+    @GetMapping("SE2900")
     public String main(Map<String, Object> model){
         model.put("some", "Работа с базой данных SBC!!!");
-        return "se2900";
+        return "SE2900";
     }
 
     @PostMapping("findAllIp")
@@ -61,7 +59,7 @@ public class Se2900Controller {
             model.put("data", iterable);
         }
 
-        return "se2900";
+        return "SE2900";
     }
 
     private CrudRepository findingRepository(String typeOfSearch) {

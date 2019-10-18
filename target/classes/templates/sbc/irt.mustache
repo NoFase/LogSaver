@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>поиск по IRT</title>
+    <link type="text/css" rel="stylesheet" href="..\css\menu.css" />
+</head>
+<body>
+<nav>
+    <ul class="clearfix">
+        <li><a href="\">Main</a></li>
+        <li><a href="\search">Search</a></li>
+        <li><a href="\loading">Loading</a></li>
+        <li><a href="#">SE2900</a>
+            <ul>
+                <li><a href="\gag">Adding</a> </li>
+                <li><a href="\SE2900">Listing</a>
+                    <ul>
+                        <li><a href="sbc\ones">1c</a></li>
+                        <li><a href="sbc\vrf">VRF</a></li>
+                        <li><a href="sbc\irt">Irt</a></li>
+                        <li><a href="\gag">Iofc</a></li>
+                        <li><a href="\gag">Iaddr</a></li>
+                        <li><a href="\gag">Isiptg</a></li>
+                        <li><a href="\gag">Cacplset</a></li>
+                        <li><a href="\gag">Caccllplc</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="\h2">Database</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+<div class="main">
+    <h2>
+        {{some}}
+    </h2>
+    <form method="post" action="filterIrt">
+        <input type="text" name="nameOfIrt" placeholder="Название IRT" />
+        <input type="submit" value="Find">
+    </form>
+
+    {{# data}}
+    <p>{{.}}</p>
+    {{/ data}}
+</div>
+
+</body>
+</html>

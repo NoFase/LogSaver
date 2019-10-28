@@ -32,6 +32,14 @@ public class Iofc implements Commandared{
         return this.tg1Name;
     }
 
+//    @Transient
+//    private Iofc iofc;
+//
+//    @ManyToOne
+//    public Iofc getIofc() {
+//        return this;
+//    }
+
     @Transient
     @Override
     public String getCommand() {

@@ -11,12 +11,12 @@ import java.util.Map;
 public class VrfController {
 
     @Autowired
-    private VrfRepository vrfSRepository;
+    private VrfRepository repository;
 
     @GetMapping("sbc/vrf")
     public String main(Map<String, Object> model){
         model.put("some", "Список всех заведенных VRF.");
-        model.put("data", vrfSRepository.findAll());
+        model.put("data", repository.findAll());
         return "sbc/vrf";
     }
 }

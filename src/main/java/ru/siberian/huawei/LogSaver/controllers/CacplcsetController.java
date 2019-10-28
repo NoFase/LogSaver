@@ -3,21 +3,19 @@ package ru.siberian.huawei.LogSaver.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.siberian.huawei.LogSaver.repository.OneSRepository;
+import ru.siberian.huawei.LogSaver.repository.CacplcsetRepository;
 
 import java.util.Map;
 
 @Controller
-//@RequestMapping(value = "/sbc/ones")
-public class OneSController {
-
+public class CacplcsetController {
     @Autowired
-    private OneSRepository repository;
+    private CacplcsetRepository repository;
 
-    @GetMapping("sbc/ones")
+    @GetMapping("sbc/cacplcset")
     public String main(Map<String, Object> model){
-        model.put("some", "Список всех заведенных 1с.");
+        model.put("some", "Список всех заведенных CACPLCSET.");
         model.put("data", repository.findAll());
-        return "sbc/ones";
+        return "sbc/cacplcset";
     }
 }

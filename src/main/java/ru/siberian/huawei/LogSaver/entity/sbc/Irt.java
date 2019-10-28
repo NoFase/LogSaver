@@ -33,6 +33,9 @@ public class Irt implements Commandared{
 //    Outbound trunk selection name
     private String snot;
 
+//    @OneToMany(mappedBy = "irt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    private List<Iofc> iofcs;
+
     @Transient
     @Override
     public String getCommand() {

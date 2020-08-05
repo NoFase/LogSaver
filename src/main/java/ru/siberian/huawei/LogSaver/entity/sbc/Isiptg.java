@@ -36,7 +36,7 @@ public class Isiptg implements Commandared{
 //    data to be selected
 //    Local address name
 //    private String laddrn;
-    @Embedded
+    @Transient
     private Iaddr laddrn;
     private String meddn;
 //    Heartbeat detection
@@ -44,7 +44,7 @@ public class Isiptg implements Commandared{
 //    Inbound trunk route name
     private String rnit;
 //    CAC policy set name (max 3)
-    @Embedded
+    @Transient
     private List<String> cacPlcSetNameList;
 //    InboundHMR policy set ID
     private String ipSetId;
@@ -52,8 +52,6 @@ public class Isiptg implements Commandared{
     private String opSetId;
 //    List ignored ports for inbound trunk (Y/N)
     private String qryitnport;
-    @Transient
-    private String signalingAddressName;
 
     @Transient
     private final String regexIp = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
@@ -97,5 +95,22 @@ public class Isiptg implements Commandared{
                     "N, INNC=N, OUTNC=N, SETQOSTH=N;",
                     tgName, LINKINFO, laddrn, lport, PIPTYPE, pipV4, pport, meddn, chb, rnit, cacPlcSetNameList.get(0),
                     qryitnport);
+    }
+
+    @Override
+    public String toString() {
+        return "Isiptg" + '\t' +
+                tgName + '\'' +
+                ", lport='" + lport + '\'' +
+                ", pipV4='" + pipV4 + '\'' +
+                ", pport='" + pport + '\'' +
+                ", laddrn=" + laddrn +
+                ", meddn='" + meddn + '\'' +
+                ", chb='" + chb + '\'' +
+                ", rnit='" + rnit + '\'' +
+                ", cacPlcSetNameList=" + cacPlcSetNameList +
+                ", ipSetId='" + ipSetId + '\'' +
+                ", opSetId='" + opSetId + '\'' +
+                ", qryitnport='" + qryitnport + '\n';
     }
 }

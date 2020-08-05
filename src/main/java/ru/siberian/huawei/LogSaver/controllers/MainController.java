@@ -1,4 +1,4 @@
-package ru.siberian.huawei.LogSaver;
+package ru.siberian.huawei.LogSaver.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +17,7 @@ import java.util.*;
 import javax.servlet.http.*;
 
 @Controller
+@RequestMapping(value = "/")
 public class MainController {
 
     private AnalyzerFromFiles analyzerFromFiles;

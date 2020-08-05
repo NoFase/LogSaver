@@ -17,26 +17,42 @@ import java.util.regex.Pattern;
 @Table(name = "SBC.iaddr")
 public class Iaddr implements Commandared{
 
+//    Only for situation when we are create IADDR for internal IPV4 and for HRU module 151
+//    HRU module ID
+    @Transient
+    private final String HRUMID = "151";
+//    Domain Type
+    @Transient
+    private final String DMT = "INTERNAL";
+    @Transient
+    private final String IPADDRESSTYPE = "IPV4";
+    @Transient
+    private final String VRFFLAG = "Y";
+
+
     @Id
     @Length(min = 1, max = 31)
     @NotNull
     private String signalingAddressName;
 
-//    Only for situation when we are create IADDR for internal IPV4 and for HRU module 151
-//    HRU module ID
-    private final String HRUMID = "151";
-//    Domain Type
-    private final String DMT = "INTERNAL";
-    private final String IPADDRESSTYPE = "IPV4";
-    private final String VRFFLAG = "Y";
-
-
-
     private String ipAddressV4;
-//    @OneToOne(mappedBy = "nameOfVrf")
+
     private String vrfName;
 
-//    @Transient
+    @OneToOne(mappedBy = "nameOfVrf")
+    public String getVrfName(){
+        return this.vrfName;
+    }
+
+    @Transient
+    private Iofc iofc;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "tg1Name")
+    public Iofc getIofc(){
+        return iofc;
+    }
+
+    @Transient
     private final String regexIp = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
 
     public Iaddr(String signalingAddressName, String ipAddressV4, String vrfName) {
@@ -46,10 +62,20 @@ public class Iaddr implements Commandared{
         this.vrfName = vrfName;
     }
 
+    @Transient
     @Override
     public String getCommand() {
         return String.format("ADD IADDR: ADDRNAME=\"%s\", HRUMID=%s, DMT=%s, IPTYPE=%s, " +
                 "IPV4=\"%s\", VRFFLAG=%s, VRFNAME=\"%s\";",
                 signalingAddressName, HRUMID, DMT, IPADDRESSTYPE, ipAddressV4, VRFFLAG, vrfName);
+    }
+
+    @Transient
+    @Override
+    public String toString() {
+        return "Iaddr: " +
+                signalingAddressName +
+                ", ipAddressV4='" + ipAddressV4 + '\'' +
+                ", vrfName='" + vrfName + '\'';
     }
 }

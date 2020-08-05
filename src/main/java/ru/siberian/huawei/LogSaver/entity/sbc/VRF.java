@@ -19,11 +19,18 @@ public class VRF {
     @Id
     @Length(min = 1, max = 31)
     @NotNull
-//    @OneToOne(mappedBy = "vrfName", cascade = CascadeType.ALL)
     private String nameOfVrf;
     private String type;
     private String target;
     private String city;
+
+    @Transient
+    private Iaddr iaddr;
+
+    @OneToOne(mappedBy = "vrfName", cascade = CascadeType.ALL)
+    public Iaddr getIaddr() {
+        return iaddr;
+    }
 
     public VRF(String nameOfVrf) {
         this.nameOfVrf = nameOfVrf;
@@ -50,5 +57,13 @@ public class VRF {
             !Pattern.matches(pattern, part)) setCity(part);
         }
         if (city == null) setCity("none");
+    }
+
+    @Override
+    public String toString() {
+        return "VRF" + '\t' +
+                nameOfVrf + '\'' +
+                ", target='" + target + '\'' +
+                ", city='" + city + '\n';
     }
 }

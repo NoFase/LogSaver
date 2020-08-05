@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
@@ -20,6 +17,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "SBC.iofc")
 public class Iofc implements Commandared{
 
+
 //    Only for situation when we are create IOFC only for one ISIPTG
 //    Office direction name
     @Id
@@ -27,12 +25,32 @@ public class Iofc implements Commandared{
     @NotNull
     private String ofcName;
 //    Name of 1st trunk group
-//    @OneToOne(mappedBy = "tgName")
     private String tg1Name;
 
+    @OneToOne(mappedBy = "tgName")
+    public String getTg1Name(){
+        return this.tg1Name;
+    }
+
+//    @Transient
+//    private Iofc iofc;
+//
+//    @ManyToOne
+//    public Iofc getIofc() {
+//        return this;
+//    }
+
+    @Transient
     @Override
     public String getCommand() {
         return String.format("ADD IOFC: OFCNAME=\"%s\", TG1NAME=\"%s\";",
                 ofcName, tg1Name);
+    }
+
+    @Override
+    public String toString() {
+        return "Iofc" + '\t' +
+                ofcName + '\'' +
+                ", tg1Name='" + tg1Name + '\n';
     }
 }

@@ -12,8 +12,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@EnableJpaAuditing
-//@Component
+@EnableJpaAuditing
 @Entity
 @Table(name = "SBC.cacplcset")
 public class Cacplcset {
@@ -24,4 +23,17 @@ public class Cacplcset {
     private String nameCacplcsetname;
     private String cacplcsetmode;
     private String callplcname;
+
+    @OneToOne(mappedBy = "nameCacllplcname")
+    public String getCallplcname() {
+        return callplcname;
+    }
+
+    @Override
+    public String toString() {
+        return "Cacplcset" + '\t'
+                + nameCacplcsetname + '\'' +
+                ", cacplcsetmode='" + cacplcsetmode + '\'' +
+                ", callplcname='" + callplcname + '\n';
+    }
 }

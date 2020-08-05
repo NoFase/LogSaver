@@ -5,22 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import ru.siberian.huawei.LogSaver.repository.IofcRepository;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Set;
 
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "SBC.irt")
 public class Irt implements Commandared{
 
+
 //    only for static routing between some ISIPTG
+    @Transient
     private final String RTTYPE = "STATIC";
 
     @Id
@@ -30,18 +30,13 @@ public class Irt implements Commandared{
 //    List of office direction names
     @Transient
     private List<String> ofcNames;
-
-    @OneToMany
-    private Set<Iofc> iofcSet;
 //    Outbound trunk selection name
     private String snot;
 
-    public Irt(@Length(min = 1, max = 31) @NotNull String rtName, List<String> ofcNames, String snot) {
-        this.rtName = rtName;
-        this.ofcNames = ofcNames;
-        this.snot = snot;
-    }
+//    @OneToMany(mappedBy = "irt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    private List<Iofc> iofcs;
 
+    @Transient
     @Override
     public String getCommand() {
         String outputCommand = String.format("ADD IRT: RTNAME=\"%s\", RTTYPE=%s, ", rtName, RTTYPE);
@@ -53,5 +48,13 @@ public class Irt implements Commandared{
             }
         outputCommand += "SNOT=\"" + snot + "\";";
         return outputCommand;
+    }
+
+    @Override
+    public String toString() {
+        return "Irt" + '\t' +
+                rtName + '\'' +
+                ", ofcNames=" + ofcNames +
+                ", snot='" + snot + '\n';
     }
 }

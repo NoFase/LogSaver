@@ -39,7 +39,7 @@ public class LoadConfigSbc{
     }
 
     public void loadingConfigSbc() {
-        List<String> lines = new ArrayList<>();
+//        List<String> lines = new ArrayList<>();
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(Paths.get("").toAbsolutePath().toString() + "/ALLME_20190910133235.txt"));
@@ -126,7 +126,7 @@ public class LoadConfigSbc{
             isiptg.setOpSetId(opSetId);
             isiptg.setQryitnport(qryitnport);
         isiptgs.put(nameIsiptg, isiptg);
-//        isiptgRepository.save(isiptg);
+        isiptgRepository.save(isiptg);
     }
 
     private void searchingIofc(String line){

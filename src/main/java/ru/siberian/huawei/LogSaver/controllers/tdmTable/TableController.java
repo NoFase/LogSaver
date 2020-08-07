@@ -1,13 +1,14 @@
-package ru.siberian.huawei.LogSaver.controllers;
+package ru.siberian.huawei.LogSaver.controllers.tdmTable;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import ru.siberian.huawei.LogSaver.entity.TDMIU.TableForSTM;
 import ru.siberian.huawei.LogSaver.external.AbrOfServers;
 import ru.siberian.huawei.LogSaver.managment.LoadingDataForTDM;
+import ru.siberian.huawei.LogSaver.repository.TableRepository;
 import ru.siberian.huawei.LogSaver.service.KLM;
 import ru.siberian.huawei.LogSaver.service.LinesOfTableForTDIMU;
 
@@ -17,6 +18,9 @@ import java.util.Map;
 
 @Controller
 public class TableController {
+    @Autowired
+    public TableRepository tableRepository;
+
     private Map<String, Object> model;
 
     @GetMapping("tables/defaultTable")
@@ -36,10 +40,11 @@ public class TableController {
         int trunkNumber;
         String typeOfSTM = "huawei";
         String klm = new KLM(typeOfSTM, numberOfE1).getKlm();
-        System.out.println(
-        new TableForSTM("SRT", numberOfSTM, numberOfE1, startTid, startTid + 31, klm, startTs, endTs, startCic, endCic, numberOfTrunk,
-                projectNumber, nameOfTrunk));
 
+        TableForSTM tableForSTM =  new TableForSTM("SRT", numberOfSTM, numberOfE1, startTid, startTid + 31, klm, startTs, endTs, startCic, endCic, numberOfTrunk,
+                projectNumber, nameOfTrunk);
+        System.out.println(tableForSTM);
+        tableRepository.save(tableForSTM);
         tableFilling();
         return "tables/defaultTable";
     }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:float="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Default Table</title>
+    <link type="text/css" rel="stylesheet" href="..\css\menu.css" />
+</head>
+<body>
+<nav>
+    <ul class="clearfix">
+        <li><a href="\">Main</a></li>
+        <li><a href="\search">Search</a></li>
+        <li><a href="\loading">Loading</a></li>
+        <li><a href="tables\choiceCityForTdm">TDM Tables</a></li>
+        <li><a href="#">SE2900</a>
+            <ul>
+                <li><a href="\gag">Adding</a> </li>
+                <li><a href="\SE2900">Listing</a>
+                    <ul>
+                        <li><a href="ones">1c</a></li>
+                        <li><a href="vrf">VRF</a></li>
+                        <li><a href="irt">Irt</a></li>
+                        <li><a href="iofc">Iofc</a></li>
+                        <li><a href="iaddr">Iaddr</a></li>
+                        <li><a href="isiptg">Isiptg</a></li>
+                        <li><a href="cacplset">Cacplset</a></li>
+                        <li><a href="caccllplc">Caccllplc</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="\h2">Database</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+
+<div class="ttable">
+    <h2>
+        {{some}}
+    </h2>
+
+    <form method="POST" action="choose">
+        <select name="abrCity" size="1">
+            {{# abrServers}}
+                <option> {{.}} </option>
+            {{/ abrServers}}
+        </select>
+        <input type="submit" value="choice">
+    </form>
+</div>
+
+</body>
+</html>

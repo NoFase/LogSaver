@@ -1,9 +1,8 @@
-package ru.siberian.huawei.LogSaver.controllers;
+package ru.siberian.huawei.LogSaver.controllers.sbc;
 
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Controller;
         import org.springframework.web.bind.annotation.GetMapping;
-        import ru.siberian.huawei.LogSaver.entity.sbc.Irt;
         import ru.siberian.huawei.LogSaver.repository.IrtRepository;
 
         import java.util.Map;

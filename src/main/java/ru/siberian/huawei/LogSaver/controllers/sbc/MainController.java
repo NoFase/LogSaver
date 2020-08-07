@@ -1,4 +1,4 @@
-package ru.siberian.huawei.LogSaver.controllers;
+package ru.siberian.huawei.LogSaver.controllers.sbc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

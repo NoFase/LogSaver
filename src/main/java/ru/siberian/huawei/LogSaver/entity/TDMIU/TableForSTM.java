@@ -38,6 +38,7 @@ public class TableForSTM {
     @Transient
     private int numberOFFCCU;
 
+
     public TableForSTM(@NotNull String cityName, @NotNull int numberOfSTM, @NotNull int numberOfE1, @NotNull int startTid, @NotNull int endTid, @NotNull String klm) {
         this.cityName = cityName;
         this.numberOfSTM = numberOfSTM;

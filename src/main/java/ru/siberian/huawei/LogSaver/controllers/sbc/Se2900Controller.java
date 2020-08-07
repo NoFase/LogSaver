@@ -1,14 +1,11 @@
-package ru.siberian.huawei.LogSaver.controllers;
+package ru.siberian.huawei.LogSaver.controllers.sbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.siberian.huawei.LogSaver.controllers.states.SeacherSBCParameter;
-import ru.siberian.huawei.LogSaver.entity.sbc.Iaddr;
 import ru.siberian.huawei.LogSaver.repository.*;
 
 import java.util.Collections;

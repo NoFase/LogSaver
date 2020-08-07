@@ -21,7 +21,7 @@ public class LogSaverApplication {
 		MessagesRepository repository = context.getBean(MessagesRepository.class);
 		repos = repository;
 
-        new ConfiguratorCustomersOnSbc();
+//        new ConfiguratorCustomersOnSbc();
 
 		ExternalData externalData = new ExternalData();
 		LogTimer timer = new LogTimer(externalData, repository);

@@ -3,7 +3,10 @@ package ru.siberian.huawei.LogSaver.process;
 import ru.siberian.huawei.LogSaver.entity.sbc.*;
 import ru.siberian.huawei.LogSaver.external.LoadConfigSbc;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ConfiguratorCustomersOnSbc {
     private Map<String, CustomerConnectionOnSBC> customers= new HashMap<>();

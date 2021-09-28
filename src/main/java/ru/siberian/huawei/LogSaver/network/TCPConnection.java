@@ -1,5 +1,9 @@
 package ru.siberian.huawei.LogSaver.network;
 
+import lombok.SneakyThrows;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.Charset;
@@ -10,6 +14,7 @@ public class TCPConnection {
     private final TCPConnectionListener eventListener;
     private final BufferedReader in;
     private final BufferedWriter out;
+    private final Logger LOGGER = LoggerFactory.getLogger(TCPConnection.class);
 
     public TCPConnection(TCPConnectionListener eventListener, String ipAddr, int port) throws IOException{
         this(eventListener, new Socket(ipAddr, port));
@@ -21,6 +26,7 @@ public class TCPConnection {
         in = new BufferedReader(new InputStreamReader(socket.getInputStream(), Charset.forName("UTF-8")));
         out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), Charset.forName("UTF-8")));
         rxThread = new Thread(new Runnable() {
+//            @SneakyThrows
             @Override
             public void run() {
                 try {
@@ -28,8 +34,9 @@ public class TCPConnection {
                     while (!rxThread.isInterrupted()){
                         eventListener.onReceiveString(TCPConnection.this, in.readLine());
                     }
-
-                } catch (IOException e) {
+                } catch ( InterruptedException e) {
+                    LOGGER.warn(e.toString());
+                } catch (IOException  e) {
                     eventListener.onException(TCPConnection.this, e);
                 }
                 finally {

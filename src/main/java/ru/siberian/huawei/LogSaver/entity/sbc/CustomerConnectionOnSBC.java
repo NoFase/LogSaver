@@ -1,6 +1,5 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
-import javax.persistence.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;

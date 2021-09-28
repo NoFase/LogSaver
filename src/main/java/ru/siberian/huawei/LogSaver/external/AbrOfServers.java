@@ -1,15 +1,17 @@
 package ru.siberian.huawei.LogSaver.external;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class AbrOfServers {
-    private List<String> abrServers;
+    public static List<String> abrServers;
     public AbrOfServers() {
-        ListOfServers listOfServers = new ListOfServers();
         abrServers = new ArrayList<>();
-        for(Map.Entry<String, String> entry: listOfServers.getServers().entrySet()){
+        for(Map.Entry<String, String> entry: ListOfServers.servers.entrySet()){
             abrServers.add(entry.getValue());
         }
     }

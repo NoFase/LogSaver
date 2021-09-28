@@ -16,8 +16,8 @@ public class MyDate {
     public Date setStartTime(){
         String time[] = form.format(new Date().getTime()).split("\\s+")[0].split("&");
 //        need write check when changing month, and year
-        localDate = LocalDate.now().plusDays(1).atTime(1, 0);
-//        localDate = LocalDateTime.now();//!!!!!!!!!!!!!!!!!!!! For Debug
+//        в следующий раз когда будешь дебажить обращай внимание на plusDays() для продакта должен быть = 1, для тестов 0
+        localDate = LocalDate.now().plusDays(InfTemplates.plusDays).atTime(InfTemplates.hour, InfTemplates.minutes);
         return Date.from(localDate.atZone(ZoneId.systemDefault()).toInstant()); //convert LocalDateTime to Date
     }
 

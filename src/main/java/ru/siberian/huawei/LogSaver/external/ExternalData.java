@@ -19,7 +19,7 @@ public class ExternalData {
         ListOfServers listOfServers = new ListOfServers();
         ListOfExceptions listOfExceptions = new ListOfExceptions();
 
-        servers = listOfServers.getServers();
+        servers = ListOfServers.servers;
         exceptions = listOfExceptions.getCommandsExceptions();
     }
 }

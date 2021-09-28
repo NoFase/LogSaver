@@ -1,11 +1,16 @@
 package ru.siberian.huawei.LogSaver.entity.sbc;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Getter

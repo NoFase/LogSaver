@@ -4,63 +4,92 @@
         <meta charset="utf-8">
         <title>Поиск логов</title>
         <link rel="stylesheet" href="css\menu.css" />
+        <link rel="stylesheet" href="css\style.css" />
     </head>
     <body>
-    <nav>
-        <ul class="clearfix">
-            <li><a href="\">Main</a></li>
-            <li><a href="\search">Search</a></li>
-            <li><a href="\loading">Loading</a></li>
-            <li><a href="#">SE2900</a>
-                <ul>
-                    <li><a href="\gag">Adding</a> </li>
-                    <li><a href="\SE2900">Listing</a>
-                        <ul>
-                            <li><a href="sbc\ones">1c</a></li>
-                            <li><a href="sbc\vrf">VRF</a></li>
-                            <li><a href="sbc\irt">Irt</a></li>
-                            <li><a href="sbc\iofc">Iofc</a></li>
-                            <li><a href="sbc\iaddr">Iaddr</a></li>
-                            <li><a href="sbc\isiptg">Isiptg</a></li>
-                            <li><a href="sbc\cacplset">Cacplset</a></li>
-                            <li><a href="sbc\caccllplc">Caccllplc</a></li>
-                        </ul>
-                    </li>
+    <div id="container">
+        <div id="navigation">
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="\">Main</a></li>
+                    <li><a href="\search">Search</a></li>
+<!--                    <li><a href="\loading">Loading</a></li>-->
+                    <li><a href="tables\defaultTable">TDM Tables</a></li>
+<!--                    <li><a href="#">SE2900</a>-->
+<!--                        <ul>-->
+<!--                            <li><a href="\gag">Adding</a> </li>-->
+<!--                            <li><a href="\SE2900">Listing</a>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="sbc\ones">1c</a></li>-->
+<!--                                    <li><a href="sbc\vrf">VRF</a></li>-->
+<!--                                    <li><a href="sbc\irt">Irt</a></li>-->
+<!--                                    <li><a href="sbc\iofc">Iofc</a></li>-->
+<!--                                    <li><a href="sbc\iaddr">Iaddr</a></li>-->
+<!--                                    <li><a href="sbc\isiptg">Isiptg</a></li>-->
+<!--                                    <li><a href="sbc\cacplset">Cacplset</a></li>-->
+<!--                                    <li><a href="sbc\caccllplc">Caccllplc</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+                    <li><a href="\h2">Database</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
-            </li>
-            <li><a href="\h2">Database</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
+            </nav>
+        </div>
 
-        <div class="main">
-            <h2>
-                {{some}}
-            </h2>
+        <div id="sidebar" align="left">
             <form method="post" action="filter">
-                <p> Выбрете город</p>
-                <select name="abrCity" size="1">
-                    {{# abrServers}}
-                    <option> {{.}} </option>
-                    {{/ abrServers}}
-                </select>
-                Выбирете дату:   <input type="date" name="dateStart">
-                                     <input type="date" name="dateEnd">
+                <h4> Выберите город
+                    <select name="abrCity" size="1">
+                        {{# abrServers}}
+                            <option> {{.}} </option>
+                        {{/ abrServers}}
+                    </select>
+                </h4>
+                <h4>Выбирете дату:
+                    <p> </p>
+                    <input type="date" name="dateStart">
+                    <input type="date" name="dateEnd">
+                </h4>
+                <h4>
                     Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>
-                <input type="submit" value="Find">
+                    <input type="submit" value="Find">
+                </h4>
             </form>
-        <!--        <div class="block">-->
-        <!--            <i class="hover">наведите на эту надпись, чтобы увидеть список заведенных аббревиатур</i>-->
-        <!--            <span class="hidden">{{# abrServers}} {{.}} {{/ abrServers}}</span>-->
-        <!--            <p></p>-->
-        <!--        </div>-->
         </div>
+        <div id="content">
 
-        <div class="main"> result of search:
-            <p>-------------------------------------------------------------------------</p>
-                {{# message}}
-                <p>{{.}}</p>
-                {{/ message}}
+            <div class="main">
+                <h2>
+                    {{some}}
+                </h2>
+<!--                <form method="post" action="filter">-->
+<!--                    <p> Выбрете город</p>-->
+<!--                    <select name="abrCity" size="1">-->
+<!--                        {{# abrServers}}-->
+<!--                        <option> {{.}} </option>-->
+<!--                        {{/ abrServers}}-->
+<!--                    </select>-->
+<!--                    Выбирете дату:   <input type="date" name="dateStart">-->
+<!--                                         <input type="date" name="dateEnd">-->
+<!--                        Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>-->
+<!--                    <input type="submit" value="Find">-->
+<!--                </form>-->
+            <!--        <div class="block">-->
+            <!--            <i class="hover">наведите на эту надпись, чтобы увидеть список заведенных аббревиатур</i>-->
+            <!--            <span class="hidden">{{# abrServers}} {{.}} {{/ abrServers}}</span>-->
+            <!--            <p></p>-->
+            <!--        </div>-->
+            </div>
+
+            <div class="main"> result of search:
+                <p>-------------------------------------------------------------------------</p>
+                    {{# message}}
+                    <p align="left">{{.}}</p>
+                    {{/ message}}
+            </div>
         </div>
+    </div>
     </body>
 </html>

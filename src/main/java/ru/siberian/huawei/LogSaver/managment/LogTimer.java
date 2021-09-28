@@ -7,17 +7,12 @@ import ru.siberian.huawei.LogSaver.network.ConnectToServer;
 import java.util.*;
 
 public class LogTimer {
-//  длительность суток
-    private final long LONGDAYBYSECONDS = 86400000;
-//    private final long LONGDAYBYSECONDS = 10000;// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!for debug
     private ExternalData externalData;
     private MessagesRepository repository;
 
     public LogTimer(ExternalData externalData, MessagesRepository repository) {
         this.externalData = externalData;
         this.repository = repository;
-
-
 
         Date date = new MyDate().setStartTime();
 
@@ -36,6 +31,7 @@ public class LogTimer {
             }
         };
         Timer timer = new Timer();
-        timer.schedule(timerTask, date, LONGDAYBYSECONDS);
+        timer.schedule(timerTask, date, (long)InfTemplates.LONGDAYBYSECONDS);
+
     }
 }

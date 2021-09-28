@@ -1,48 +1,59 @@
-/* задаем относительное позиционирование контейнеру */
-.block{position:relative;}
-/* Оформление скрытого элемента по умолчанию */ 
-.hidden
-{display: none;
-position: absolute;
-bottom: 130%;
-left: 0px;
-background-color: #fff;
-color: #3aaeda;
-padding: 5px;
-text-align: center;
--moz-box-shadow: 0 1px 1px rgba(0,0,0,.16);
--webkit-box-shadow: 0 1px 1px rgba(0,0,0,.16);
-box-shadow: 0 1px 1px rgba(0,0,0,.16);
-font-size: 12px;}
-/* Дополнительное оформление скрытого элемента(необязательно) */
-.hover + .hidden:before
-{content: " ";
-position: absolute;
-top: 98%;
-left: 10%;
-margin-left: -5px;
-border-width: 5px;
-border-style: solid;
-height: 0;
-width: 0;
-border: 7px solid transparent;
-border-right: 7px solid #fff;
-border-color: #fff transparent transparent transparent;
-z-index: 2;}
-/* Дополнительное оформление скрытого элемента(необязательно) */
-.hover + .hidden:after
-{content: " ";
-position: absolute;
-top: 100%;
-left: 10%;
-margin-left: -5px;
-border-width: 5px;
-border-style: solid;
-height: 0;
-width: 0;
-border: 7px solid transparent;
-border-right: 7px solid #fff;
-border-color: rgba(0,0,0,.16) transparent transparent transparent;
-z-index: 1;}
-/* Появление скрытого элемента при наведении */
-.hover:hover + .hidden{display: block;}
+body {
+    background: #FFF
+    color: #000
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#container {
+    background: #FFF;
+    margin: auto auto;
+    text-align: center;
+    width: 95%;
+    height: 90vh; /* 100vh - 100% РѕС‚ РІС‹СЃРѕС‚С‹ viewport(РѕРєРЅР° Р±СЂР°СѓР·РµСЂР°) */
+}
+
+#navigation {
+    background: #FFF;
+    width: 100%;
+}
+
+#sidebar {
+    background: #E64A19;
+    color:#FFF;
+    float: left;
+    width: 19%;
+    margin-top: 1%;
+    clear: left;
+    height: 100%;
+}
+h4 {
+    align="left";
+    margin-left:20px;
+}
+
+h2 {
+    align="left";
+    /*margin-left:1%;*/
+}
+/*input {
+    margin-top: 50px;
+    margin-left: 20%;
+    clear: left;
+}
+*/
+#content {
+    background: #DCDCDC;
+    float: right;
+    margin-top: 1%;
+    /*margin-left: 3px;*/
+    width: 80%;
+    height: inherit;
+    overflow: auto; /* СЃРІРѕР№СЃС‚РІРѕ РґР»СЏ РїСЂРѕРєСЂСѓС‚РєРё РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё. РђРІС‚РѕРјР°С‚РѕРј, РµСЃР»Рё Р±РѕР»СЊС€Рµ Р±Р»РѕРєР° */
+    border: 1px solid #C1C1C1;/* СЂР°Р·РјРµСЂ Рё С†РІРµС‚ РіСЂР°РЅРёС†С‹ Р±Р»РѕРєР° */
+}
+
+#clear {
+    clear: both;
+}
+

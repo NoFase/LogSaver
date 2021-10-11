@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class SAXMyParser {
     private final Logger LOGGER = LoggerFactory.getLogger(SAXMyParser.class);
 
-    final String fileName = "GExport_SoftX3000_NNovgorod_10.141.139.7_20210913031516.xml";
-//    final String fileName = "short.xml";
     private ArrayList<TKC_SOFTX3000> tkcSoftx3000s = new ArrayList<>();
     private ArrayList<TG_SOFTX3000> tgSoftx3000s = new ArrayList<>();
+
+    private String fileName;
 
     public ArrayList<TKC_SOFTX3000> getTkcSoftx3000s() {
         return tkcSoftx3000s;
@@ -66,7 +66,6 @@ public class SAXMyParser {
                         break;
                     case ("N7TG_SOFTX3000"):
                         classType = 7;
-                        System.out.println("CLASS N7");
                         tagOn = true;
                         break;
                     case ("SIPTG_SOFTX3000"):
@@ -165,27 +164,26 @@ public class SAXMyParser {
             super.endElement(uri, localName, qName);
             if (qName.equalsIgnoreCase("class")) tagOn = false;
             if (qName.equalsIgnoreCase("object")) tagObjectOn = false;
-            //проработать закрытие тегов через флаги
+
         }
 
         @Override
         public void startDocument() throws SAXException {
-            LOGGER.info("Начало разбора документа!");// далее необходимо добавить название фвйла который разбирается
         }
 
         @Override
         public void endDocument() throws SAXException {
-            LOGGER.info("Разбор документа завершен!");
+            LOGGER.info("Finished parse file " + fileName + " for creating TBL MGTID.");
         }
         @Override
         public void startPrefixMapping (String prefix, String uri)
                 throws SAXException
         {
-            System.out.println(prefix + " - " + uri);
         }
     };
 
-    public SAXMyParser() {
+    public SAXMyParser(String fileName) {
+        this.fileName = fileName;
         try {
             SAXParserFactory factory;
             factory = SAXParserFactory.newInstance();
@@ -195,6 +193,7 @@ public class SAXMyParser {
             saxParser.parse(fileName, handler);
         } catch (Exception e) {
             e.printStackTrace();
+            LOGGER.info(e.toString());
         }
     }
 }

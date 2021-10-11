@@ -24,4 +24,13 @@ public class TG_SOFTX3000 {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "TG_SOFTX3000{" +
+                "TG='" + TG + '\'' +
+                ", TGN='" + TGN + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

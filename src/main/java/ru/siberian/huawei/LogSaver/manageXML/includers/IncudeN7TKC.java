@@ -2,6 +2,7 @@ package ru.siberian.huawei.LogSaver.manageXML.includers;
 
 import org.xml.sax.Attributes;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tkc.N7TKC_SOFTX3000;
+import sun.util.locale.provider.LocaleServiceProviderPool;
 
 public class IncudeN7TKC {
     public IncudeN7TKC(N7TKC_SOFTX3000 tg, Attributes attributes) {
@@ -44,5 +45,10 @@ public class IncudeN7TKC {
                 tg.setTIDPFX(attributes.getValue(attributes.getQName(1)));
                 break;
         }
+//        if (tg.getTID() != null) {
+//            if (Integer.parseInt(tg.getTID()) > 5000) {
+//                System.out.println(tg.getTID() + " - " + tg.getTG());
+//            }
+//        }
     }
 }

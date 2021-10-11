@@ -13,6 +13,7 @@ import ru.siberian.huawei.LogSaver.external.ListOfServers;
 import ru.siberian.huawei.LogSaver.manageXML.SAXMyParser;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tg.TG_SOFTX3000;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tkc.TKC_SOFTX3000;
+import ru.siberian.huawei.LogSaver.managment.DirScanner;
 import ru.siberian.huawei.LogSaver.repository.TableRepository;
 import ru.siberian.huawei.LogSaver.service.KLM;
 import ru.siberian.huawei.LogSaver.service.LinesOfTableForTDIMU;
@@ -37,32 +38,39 @@ public class TableController {
     public String main(Map<String, Object> model){
         model.put("some", "Просмотр таблиц TDIMU");
         model.put("abrServers", AbrOfServers.abrServers);
-        LOGGER.info("\t\tStart controller, by method main - " + AbrOfServers.abrServers);
+//        LOGGER.info("\t\tStart controller, by method main - " + AbrOfServers.abrServers);
         return "tables/defaultTable";
     }
 
     @PostMapping("tables/choose")
     public String choose(@RequestParam String abrCity, Map<String, Object> model){
         this.abrCity = abrCity;
-        model.put("some", "Выбран город " + abrCity);
+
 
         model.put("abrServers", AbrOfServers.abrServers);
         HashMap<String, TKC_SOFTX3000> tkc_softx3000HashMap = new HashMap<>();
         HashMap<String, TG_SOFTX3000> tg_softx3000HashMap = new HashMap<>();
-        SAXMyParser saxMyParser = new SAXMyParser();
-        maxTid = 0;
-        for(TKC_SOFTX3000 tkc: saxMyParser.getTkcSoftx3000s()){
+        //поиск имени файла по аббревиатуре
+        String fileName = new DirScanner(abrCity).finding();
+        if (fileName.equalsIgnoreCase("empty") || fileName == null || fileName == "") {
+            model.put("some", "Данных по выбранному городу нет");
+        } else {
+            model.put("some", "Выбран город " + abrCity);
+            //запускаем парсер XML, указав имя файла, найденного в DirScanner
+            SAXMyParser saxMyParser = new SAXMyParser("/XMLTemporary/" + fileName);
+            maxTid = 0;
+            for(TKC_SOFTX3000 tkc: saxMyParser.getTkcSoftx3000s()){
+                if (Integer.parseInt(tkc.getTID()) > maxTid) maxTid = Integer.parseInt(tkc.getTID());
+                tkc_softx3000HashMap.put(tkc.getTID(), tkc);
+            }
 
-            if (Integer.parseInt(tkc.getTID()) > maxTid) maxTid = Integer.parseInt(tkc.getTID());
-            tkc_softx3000HashMap.put(tkc.getTID(), tkc);
-        }
-
-        for (TG_SOFTX3000 tg: saxMyParser.getTgSoftx3000s()){
-            tg_softx3000HashMap.put(tg.getTG(), tg);
+            for (TG_SOFTX3000 tg: saxMyParser.getTgSoftx3000s()){
+                tg_softx3000HashMap.put(tg.getTG(), tg);
+            }
         }
 
         tableFilling(model, tkc_softx3000HashMap, tg_softx3000HashMap);
-        LOGGER.info("\t\tStart controller, by method choose");
+//        LOGGER.info("\t\tStart controller, by method choose");
         String ipServer = ListOfServers.servers.entrySet()
                 .stream()
                 .filter(pair -> pair.getValue().equals(abrCity))
@@ -100,7 +108,18 @@ public class TableController {
         List<List<String>> lll = new ArrayList<>();
         List<String> lineOfTables = new ArrayList<>();
 
-        for (int j = 0; j < (maxTid/(32*63)); j++) {
+//        for (Map.Entry e: tgs.entrySet()) {
+//            LOGGER.info(e.getKey().toString() + " - " + e.getValue().toString());
+//        }
+
+//        for (Map.Entry e : tkc.entrySet()){
+//            TKC_SOFTX3000 tt = (TKC_SOFTX3000)e.getValue();
+//            if (tt.getTG().equalsIgnoreCase("28"))
+//                System.out.println(tt.toString());
+//
+//        }
+
+        for (int j = 0; j < (maxTid/(32*63) + (maxTid % (32*63) > 0 ? 1 : 0)); j++) { // высчитываем количество STM и обходим их все
             for (int i = 0; i < 64; i++) {
                 lineOfTables.add(new LinesOfTableForTDIMU(i, j, "Huawei", tkc, tgs).creatingLineOfTableForTDIMU());
             }

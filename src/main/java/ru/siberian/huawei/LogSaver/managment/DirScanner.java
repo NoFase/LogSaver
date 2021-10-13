@@ -2,6 +2,7 @@ package ru.siberian.huawei.LogSaver.managment;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.siberian.huawei.LogSaver.managment.services.FileManager;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class DirScanner {
     private String serverName;
-    private String folderName = "/XMLTemporary/";//возможно надо придумать плавающить путь до папки
+//    private String folderName = "/XMLTemporary/";//возможно надо придумать плавающить путь до папки
 
     private final Logger LOGGER = LoggerFactory.getLogger(DirScanner.class);
 
@@ -23,7 +24,9 @@ public class DirScanner {
     }
 
     public List<File> searchFileInFolder() {
-        File dir = new File(folderName);
+        File dir = new File(FileManager.PATH);
+        System.out.println(dir.getPath());
+
         List<File> list = new ArrayList<>();
         for (File file : dir.listFiles()) {
             if (file.isFile())
@@ -117,7 +120,7 @@ public class DirScanner {
                     .findFirst()
                     .get();
         } catch (NoSuchElementException e){
-            LOGGER.info("Has not any files in folder " + folderName);
+            LOGGER.info("Has not any files in folder " + FileManager.PATH);
             return "Empty";
         }
     }

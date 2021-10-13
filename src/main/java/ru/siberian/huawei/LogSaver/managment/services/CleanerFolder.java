@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 /*
@@ -14,8 +15,8 @@ public class CleanerFolder {
     private List<File> list = new ArrayList<>();
 
 
-    public CleanerFolder() {
-        searchFileInFolder("/XMLTemporary/");
+    public CleanerFolder(String path) {
+        searchFileInFolder(path);
         if (list.size() > 0) {
 //            list.stream().forEach(s -> deletingFiles(s));
             for (File file : list) {

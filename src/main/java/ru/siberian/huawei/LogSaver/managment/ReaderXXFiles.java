@@ -15,6 +15,9 @@ public class ReaderXXFiles {
     private String fileName;
     private final Logger LOGGER = LoggerFactory.getLogger(ReaderXXFiles.class);
 
+    public ReaderXXFiles() {
+    }
+
     public ReaderXXFiles(String fileName) {
         this.fileName = fileName;
     }
@@ -23,6 +26,28 @@ public class ReaderXXFiles {
         ArrayList<String> result = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(Paths.get("").toAbsolutePath().toString() + "/src/main/resources/include/" + fileName));
+            while (br.ready()){
+                result.add(br.readLine());
+            }
+            br.close();
+            LOGGER.info("\tFinished reading data from the file," + fileName + " The numbers of lines read from the file: " + result.size());
+        } catch (FileNotFoundException e) {
+            LOGGER.warn("\t" + fileName + " - This file was not found. The file was searched for in the following path: "
+                    + Paths.get("").toAbsolutePath().toString());
+            e.printStackTrace();
+        } catch (IOException e) {
+            LOGGER.warn("\t We have some problem with reading the file: " + fileName);
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+
+    public ArrayList<String> reading(String fileName) {
+        this.fileName = fileName;
+        ArrayList<String> result = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(Paths.get("").toAbsolutePath().toString() + "/"+ fileName));
             while (br.ready()){
                 result.add(br.readLine());
             }

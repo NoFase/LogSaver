@@ -44,9 +44,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312d4c9a-b73e-4671-be08-f521111e00e0" name="Default Changelist" comment="work 28092021">
-      <change afterPath="$PROJECT_DIR$/LogSaver-0.2.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/XMLServerList.txt" afterDir="false" />
+    <list default="true" id="312d4c9a-b73e-4671-be08-f521111e00e0" name="Default Changelist" comment="work 11102021">
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-09-28.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-09-30.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-01.0.gz" afterDir="false" />
@@ -54,42 +52,25 @@
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-04.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-07.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-09.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/DirScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/FTPServersForUpload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LoadersDataForXML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/include/XMLServerList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-11.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/inf.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mylog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mylog.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/LogSaverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/LogSaverApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/clasess/tg/TG_SOFTX3000.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/clasess/tg/TG_SOFTX3000.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncludeTG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncludeTG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/DirScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/DirScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/InfTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/InfTemplates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LoadersDataForXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LoadersDataForXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FTPManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FTPManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/ZipExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/ZipExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/service/LinesOfTableForTDIMU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/service/LinesOfTableForTDIMU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tables/defaultTable.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tables/defaultTable.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LogSaver-0.2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LogSaver-0.2.6.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/LogSaverApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/LogSaverApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/SAXMyParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/clasess/tg/TG_SOFTX3000.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/clasess/tg/TG_SOFTX3000.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncludeTG.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncludeTG.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/InfTemplates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/InfTemplates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/FTPManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/FTPManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/ZipExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/ZipExtractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/service/LinesOfTableForTDIMU.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/service/LinesOfTableForTDIMU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/tables/defaultTable.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tables/defaultTable.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +103,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="home" />
+        <entry key="$PROJECT_DIR$" value="tables" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -178,7 +159,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -317,7 +298,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632818298004</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="work 11102021">
+      <created>1633939007941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633939007941</updated>
+    </task>
+    <task id="LOCAL-00004" summary="work 11102021">
+      <created>1633939071524</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633939071524</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,7 +344,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="home 07082020" />
     <MESSAGE value="work 28092021" />
-    <option name="LAST_COMMIT_MESSAGE" value="work 28092021" />
+    <MESSAGE value="work 11102021" />
+    <option name="LAST_COMMIT_MESSAGE" value="work 11102021" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -358,6 +354,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/ConnectToServer.java</url>
           <line>28</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FTPManager.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

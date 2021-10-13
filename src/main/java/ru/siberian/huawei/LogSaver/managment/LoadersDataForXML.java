@@ -14,7 +14,7 @@ public class LoadersDataForXML {
     static public List<FTPServersForUpload> ftpServersForUploads = new ArrayList<>();
 
     public LoadersDataForXML() {
-        ArrayList<String> strings = new ReaderXXFiles("XMLServerList.txt").reading();
+        ArrayList<String> strings = new ReaderXXFiles().reading("XMLServerList.txt");
         LOGGER.info("load " + strings.size() + " strings");
 
         for (String string: strings){

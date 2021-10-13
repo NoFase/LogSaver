@@ -16,8 +16,8 @@ public class InfTemplates {
     public static int plusDays;
     {
     //        выгрузка данных из файла настроек
-        ReaderXXFiles reader = new ReaderXXFiles("\\services\\inf.ini");
-        ArrayList<String> inf = reader.reading();
+        ReaderXXFiles reader = new ReaderXXFiles();
+        ArrayList<String> inf = reader.reading("\\services\\inf.ini");
             for (String lineOfInf: inf){
             if (lineOfInf.contains("=")) {
                 String[] dataOfInf = lineOfInf.split("=");

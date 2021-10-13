@@ -2,7 +2,6 @@ package ru.siberian.huawei.LogSaver.manageXML.includers;
 
 import org.xml.sax.Attributes;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tkc.N7TKC_SOFTX3000;
-import sun.util.locale.provider.LocaleServiceProviderPool;
 
 public class IncudeN7TKC {
     public IncudeN7TKC(N7TKC_SOFTX3000 tg, Attributes attributes) {

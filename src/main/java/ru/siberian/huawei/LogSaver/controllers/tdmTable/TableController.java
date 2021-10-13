@@ -14,6 +14,7 @@ import ru.siberian.huawei.LogSaver.manageXML.SAXMyParser;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tg.TG_SOFTX3000;
 import ru.siberian.huawei.LogSaver.manageXML.clasess.tkc.TKC_SOFTX3000;
 import ru.siberian.huawei.LogSaver.managment.DirScanner;
+import ru.siberian.huawei.LogSaver.managment.services.FileManager;
 import ru.siberian.huawei.LogSaver.repository.TableRepository;
 import ru.siberian.huawei.LogSaver.service.KLM;
 import ru.siberian.huawei.LogSaver.service.LinesOfTableForTDIMU;
@@ -48,6 +49,9 @@ public class TableController {
 
 
         model.put("abrServers", AbrOfServers.abrServers);
+
+        System.out.println(AbrOfServers.abrServers);
+
         HashMap<String, TKC_SOFTX3000> tkc_softx3000HashMap = new HashMap<>();
         HashMap<String, TG_SOFTX3000> tg_softx3000HashMap = new HashMap<>();
         //поиск имени файла по аббревиатуре
@@ -57,7 +61,7 @@ public class TableController {
         } else {
             model.put("some", "Выбран город " + abrCity);
             //запускаем парсер XML, указав имя файла, найденного в DirScanner
-            SAXMyParser saxMyParser = new SAXMyParser("/XMLTemporary/" + fileName);
+            SAXMyParser saxMyParser = new SAXMyParser(FileManager.PATH + fileName);
             maxTid = 0;
             for(TKC_SOFTX3000 tkc: saxMyParser.getTkcSoftx3000s()){
                 if (Integer.parseInt(tkc.getTID()) > maxTid) maxTid = Integer.parseInt(tkc.getTID());

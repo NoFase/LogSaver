@@ -52,7 +52,7 @@ public class FTPManager {
     public void uploadFromFTP() {
 
         if (remoteFileName != null) {
-            File downloadFile = new File("/XMLTemporary/" + remoteFileName);
+            File downloadFile = new File(FileManager.PATH + remoteFileName);
             try (OutputStream os = new BufferedOutputStream(new FileOutputStream(downloadFile))){
                 boolean status = ftpClient.retrieveFile(remoteFileName, os);
                 LOGGER.info("status = " + status);
@@ -72,7 +72,7 @@ public class FTPManager {
     private void download() throws IOException {
 //    private void download(String fileURL, String destinationDirectory,String name) throws IOException {
         String fileURL = remoteFileName;
-        String destinationDirectory = "/XMLTemporary/";
+//        String destinationDirectory = "/XMLTemporary/";
         // File name that is being downloaded
         String downloadedFileName = remoteFileName;
         // Open connection to the file
@@ -80,7 +80,7 @@ public class FTPManager {
 
         InputStream is = url.openStream();
         // Stream to the destionation file
-        FileOutputStream fos = new FileOutputStream(destinationDirectory + "/" + downloadedFileName);
+        FileOutputStream fos = new FileOutputStream(FileManager.PATH + downloadedFileName);
         BufferedOutputStream bos = new BufferedOutputStream(fos );
 
         // Read bytes from URL to the local file

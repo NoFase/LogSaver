@@ -44,7 +44,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312d4c9a-b73e-4671-be08-f521111e00e0" name="Default Changelist" comment="work 11102021">
+    <list default="true" id="312d4c9a-b73e-4671-be08-f521111e00e0" name="Default Changelist" comment="work 13102021">
+      <change afterPath="$PROJECT_DIR$/filterSbc.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-09-28.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-09-30.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-01.0.gz" afterDir="false" />
@@ -53,24 +54,145 @@
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-07.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-09.0.gz" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-11.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/inf.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-12.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2021-10-19.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2022-07-15.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2022-07-25.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2022-07-28.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2022-07-29.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/mylog.log.2022-07-31.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serversList2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seversDOM.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/SbcController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/SbcLogMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/SbcLogMessagesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/DOMxml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/FilterBdForSbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ParserValueFromSbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/ConnectToSbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/notInUse/ServersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/statics/ClassOfStatics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/information/servers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/information/servers.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/searchSbc.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/serverInfo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exceptionsList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exceptionsList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mylog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mylog.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/DirScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/DirScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/InfTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/InfTemplates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LoadersDataForXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LoadersDataForXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FTPManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FTPManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/services/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/tdmTable/TableController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/manageXML/includers/IncudeN7TKC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/InfTemplates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/InfTemplates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/ReaderXXFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/CleanerFolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/FTPManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/services/FTPManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serversList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/serversList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serversList1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/services/inf.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/LogSaverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/LogSaverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/CaccallplcController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/CacplcsetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/IaddrController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/IofController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/IrtController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/IsiptgController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/OneSController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/Se2900Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/sbc/VrfController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/states/SeacherSBCParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/controllers/states/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Caccallplc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Cacplcset.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Commandared.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/CustomerConnectionOnSBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Iaddr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Iofc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Irt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/Isiptg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/OneS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/entity/sbc/VRF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ExternalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ExternalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ListOfExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ListOfExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ListOfServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/ListOfServers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/external/LoadConfigSbc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LogTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/LogTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/TCPConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/TCPConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/TCPConnectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/TCPConnectionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/process/ConfiguratorCustomersOnSbc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/CaccallplcRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/CacplcsetRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/IaddrRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/IofcRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/IrtRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/IsiptgRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/OneSRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/repository/VrfRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/SE2900.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/SE2900.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/caccallplc.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/cacplcset.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/iaddr.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/iofc.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/irt.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/isiptg.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/ones.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sbc/vrf.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tables/choiceCityForTdm.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tables/choiceCityForTdm.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tables/defaultTable.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tables/defaultTable.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/LogSaverApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/LogSaverApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/CaccallplcController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/CacplcsetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/IaddrController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/IofController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/IrtController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/IsiptgController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/OneSController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/Se2900Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/sbc/VrfController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/states/SeacherSBCParameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/controllers/states/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Caccallplc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Cacplcset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Commandared.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/CustomerConnectionOnSBC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Iaddr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Iofc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Irt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/Isiptg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/OneS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/entity/sbc/VRF.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ExternalData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ExternalData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ListOfExceptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ListOfExceptions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ListOfServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/ListOfServers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/external/LoadConfigSbc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/LogTimer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/LogTimer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/LogTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/managment/LogTimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnection$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/network/TCPConnectionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/process/ConfiguratorCustomersOnSbc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/CaccallplcRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/CacplcsetRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/IaddrRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/IofcRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/IrtRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/IsiptgRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/OneSRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/siberian/huawei/LogSaver/repository/VrfRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/SE2900.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/SE2900.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/caccallplc.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/cacplcset.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/iaddr.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/iofc.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/irt.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/isiptg.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/ones.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sbc/vrf.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/search.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/search.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tables/choiceCityForTdm.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tables/choiceCityForTdm.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tables/defaultTable.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tables/defaultTable.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +280,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testProject" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -171,6 +293,9 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.siberian.huawei.LogSaver.manageXML" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\programming\LogSaver\src\main\resources\templates\tables" />
     </key>
@@ -312,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633939071524</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="work 13102021">
+      <created>1634106054931</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634106054931</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,7 +477,8 @@
     <MESSAGE value="home 07082020" />
     <MESSAGE value="work 28092021" />
     <MESSAGE value="work 11102021" />
-    <option name="LAST_COMMIT_MESSAGE" value="work 11102021" />
+    <MESSAGE value="work 13102021" />
+    <option name="LAST_COMMIT_MESSAGE" value="work 13102021" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -360,11 +493,25 @@
           <line>44</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/network/ConnectToServer.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/siberian/huawei/LogSaver/managment/ParserValueFromSbc.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="15" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LogSaver$LogSaverApplication.ic" NAME="LogSaverApplication Coverage Results" MODIFIED="1626152151883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LogSaver$LogSaverApplication.ic" NAME="LogSaverApplication Coverage Results" MODIFIED="1657787691757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ru.siberian.huawei.LogSaver.*</FILTER>
     </SUITE>
   </component>

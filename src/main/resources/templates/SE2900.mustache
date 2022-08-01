@@ -4,59 +4,60 @@
         <meta charset="utf-8">
         <title>поиск в sbc</title>
         <link rel="stylesheet" href="css\menu.css" />
+        <link rel="stylesheet" href="css\style.css" />
     </head>
     <body>
-        <nav>
-            <ul class="clearfix">
-                <li><a href="\">Main</a></li>
-                <li><a href="\search">Search</a></li>
-                <li><a href="\loading">Loading</a></li>
-                <li><a href="#">SE2900</a>
-                    <ul>
-                        <li><a href="\gag">Adding</a> </li>
-                        <li><a href="\SE2900">Listing</a>
-                            <ul>
-                                <li><a href="sbc\ones">1c</a></li>
-                                <li><a href="sbc\vrf">VRF</a></li>
-                                <li><a href="sbc\irt">Irt</a></li>
-                                <li><a href="sbc\iofc">Iofc</a></li>
-                                <li><a href="sbc\iaddr">Iaddr</a></li>
-                                <li><a href="sbc\isiptg">Isiptg</a></li>
-                                <li><a href="sbc\cacplset">Cacplset</a></li>
-                                <li><a href="sbc\caccllplc">Caccllplc</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="\h2">Database</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-
-        <div class="main">
-            <h2>
-                {{some}}
-            </h2>
-            <form method="POST" action="findAllIp">
-                <input type="text" name="sign" placeholder="признак"/>
-
-                <select name="typeOfSearch" size="1">
-                    <option>Iaddr</option>
-                    <option>Iofc</option>
-                    <option>Irt</option>
-                    <option>Isiptg</option>
-                    <option>VRF</option>
-                    <option>1c</option>
-                    <option>Caccllplc</option>
-                    <option>Cacplset</option>
-                </select>
-                <button type="submit">Find</button>
-            </form>
-
-            {{# data}}
-            <p>{{.}}</p>
-            {{/ data}}
+    <div id="container">
+        <div id="navigation">
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="\">Main</a></li>
+                    <li><a href="\search">Search</a></li>
+                    <li><a href="tables\defaultTable">TDM Tables</a></li>
+                    <li><a href="\SE2900">SBC</a></li>
+                    <!--                    <li><a href="\h2">Database</a></li>-->
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
         </div>
+
+        <div id="sidebar" align="left">
+            <form method="post" action="filterSBC">
+                <h4> Выберите город
+                    <select name="abrCity" size="1">
+                        {{# abrServers}}
+                        <option> {{.}} </option>
+                        {{/ abrServers}}
+                    </select>
+                </h4>
+                <h4>Выбирете дату:
+                    <p> </p>
+                    <input type="date" name="dateStart">
+                    <input type="date" name="dateEnd">
+                </h4>
+                <h4>
+                    Введите текст совпадения: <input type="text" name="sign" placeholder="Command"/>
+                    <input type="submit" value="Find">
+                </h4>
+            </form>
+        </div>
+        <div id="content">
+
+            <div class="main">
+                <h2>
+                    {{some}}
+                </h2>
+
+            </div>
+
+            <div class="main"> result of search:
+                <p>-------------------------------------------------------------------------</p>
+                {{# message}}
+                <p align="left">{{.}}</p>
+                {{/ message}}
+            </div>
+        </div>
+    </div>
 
     </body>
 </html>

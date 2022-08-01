@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Choose Servers</title>
+<!--    <script ENGINE="text/javascript">-->
+<!--        //Функция показа-->
+<!--        function show(state)-->
+<!--        {-->
+<!--        document.getElementById('window').style.display = state;-->
+<!--        document.getElementById('wrap').style.display = state;-->
+<!--        }-->
+<!--    </script>-->
+
+    <link type="text/css" rel="stylesheet" href="..\css\menu.css" />
+    <link type="text/css" rel="stylesheet" href="..\css\style.css" />
+    <link type="text/css" rel="stylesheet" href="..\css\windows.css" />
+</head>
+<body>
+    <div id="container">
+            <div id="navigation">
+                <nav>
+                    <ul class="clearfix">
+                        <li><a href="\">Main</a></li>
+                        <li><a href="\search">Search</a></li>
+                        <!--                    <li><a href="\loading">Loading</a></li>-->
+                        <li><a href="tables\defaultTable">TDM Tables</a></li>
+                        <!--                    <li><a href="#">SE2900</a>-->
+                        <!--                        <ul>-->
+                        <!--                            <li><a href="\gag">Adding</a> </li>-->
+                        <!--                            <li><a href="\SE2900">Listing</a>-->
+                        <!--                                <ul>-->
+                        <!--                                    <li><a href="sbc\ones">1c</a></li>-->
+                        <!--                                    <li><a href="sbc\vrf">VRF</a></li>-->
+                        <!--                                    <li><a href="sbc\irt">Irt</a></li>-->
+                        <!--                                    <li><a href="sbc\iofc">Iofc</a></li>-->
+                        <!--                                    <li><a href="sbc\iaddr">Iaddr</a></li>-->
+                        <!--                                    <li><a href="sbc\isiptg">Isiptg</a></li>-->
+                        <!--                                    <li><a href="sbc\cacplset">Cacplset</a></li>-->
+                        <!--                                    <li><a href="sbc\caccllplc">Caccllplc</a></li>-->
+                        <!--                                </ul>-->
+                        <!--                            </li>-->
+                        <!--                        </ul>-->
+                        <!--                    </li>-->
+                        <li><a href="\h2">Database</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        <div id="sidebar">
+            <form method="POST" action="choose">
+                <h4>Необходимо выбрать город</h4>
+                <select name="abrCity" size="1">
+                    {{# abrServers}}
+                    <option> {{.}} </option>
+                    {{/ abrServers}}
+                </select>
+                <input type="submit" value="choice">
+            </form>
+        </div>
+
+
+        <div id="content">
+            <p></p>
+            <input type="text" name="serverName" placeholder="Name of Server">
+            <p></p>
+            <input type="text" name="ipSx" placeholder="IP SOFTX3000">
+            <p></p>
+            <input type="text" name="abr" placeholder="ABR">
+            <p></p>
+            <input type="text" name="login1" placeholder="Login to SOFTX3000">
+            <p></p>
+            <input type="text" name="pass1" placeholder="Password to SOFTX3000">
+            <p></p>
+            <input type="text" name="ipFtp" placeholder="Ip to FTP">
+            <p></p>
+            <input type="text" name="loginFTP" placeholder="Login to FTP">
+            <p></p>
+            <input type="text" name="passFtp" placeholder="Password to FTP">
+            <p></p>
+            <input type="text" name="pathFtp" placeholder="Path to folder in FTP">
+        </div>
+
+        <div id="clear"> </div>
+    </div>
+
+</body>
+</html>

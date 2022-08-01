@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Servers xmlns="https://myXMLParser.com/servers">
+<Server serverName="Saratov">
+<ipSx>10.124.125.4</ipSx>
+<abr>SRT</abr>
+<loginSx>login1</loginSx>
+<passSx>pass1</passSx>
+<ipFtp>10.10.11.11</ipFtp>
+<loginFtp>loginFTP</loginFtp>
+<passFtp>12133ff34</passFtp>
+<pathFtp>/src/doc/dd</pathFtp>
+<idForFtp>Saratov_SX</idForFtp>
+</Server>
+<Server serverName="Orenburg">
+<ipSx>10.130.130.4</ipSx>
+<abr>ORB</abr>
+<loginSx>login2</loginSx>
+<passSx>pass2</passSx>
+<ipFtp>100.100.101.101</ipFtp>
+<loginFtp>loginFTP1</loginFtp>
+<passFtp>dsafdsafwee</passFtp>
+<pathFtp>/src/doc/dd/bin</pathFtp>
+<idForFtp>Orenburg_SX</idForFtp>
+</Server>
+<STMs>
+<STM server_STM="Saratov">
+<BName>E63</BName>
+<BNumber>0</BNumber>
+<FN>1</FN>
+<SN>2</SN>
+<ST>0</ST>
+<ET>2047</ET>
+</STM>
+<STM server_STM="Saratov">
+<BName>E63</BName>
+<BNumber>1</BNumber>
+<FN>1</FN>
+<SN>3</SN>
+<ST>2048</ST>
+<ET>4095</ET>
+</STM>
+</STMs>
+</Servers>

@@ -10,12 +10,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Locale;
 
 @Repository
 public class ListOfServers {
     private final Logger LOGGER = LoggerFactory.getLogger(ListOfServers.class);
-    public static HashMap<String, String> servers = new HashMap<>();
+    public static HashMap<String, String> servers = new HashMap<>(); // for SoftX3000
+    public static HashMap<String, String> serversSbc = new HashMap<>(); //for SBC SE2900
 
     public ListOfServers() {
         try {
@@ -23,7 +26,12 @@ public class ListOfServers {
             while (br.ready()){
                 String[] line = br.readLine().split("\\s+");
 //          index 0 - Ip Addres, index 1 - ABR
-                servers.put(line[0].trim(), line[1].trim().toUpperCase());
+                if(line[2].trim().contains("SX"))
+                    servers.put(line[0].trim(), line[1].trim().toUpperCase());
+                else if (line[2].trim().contains("SBC")){
+                    serversSbc.put(line[0].trim(), line[1].trim());
+                }
+
             }
             br.close();
             LOGGER.info("\tRead " + servers.size() + " servers from the serversList");

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ru.siberian.huawei</groupId>
 	<artifactId>LogSaver</artifactId>
-	<version>0.2.7</version>
+	<version>0.2.8</version>
 <!--	added search functionality by city and commands   -->
 	<packaging>jar</packaging>
 	<name>LogSaver</name>

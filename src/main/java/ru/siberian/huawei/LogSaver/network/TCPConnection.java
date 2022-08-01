@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.Charset;
+import java.text.ParseException;
 
 public class TCPConnection {
     private final Socket socket;
@@ -38,8 +39,9 @@ public class TCPConnection {
                     LOGGER.warn(e.toString());
                 } catch (IOException  e) {
                     eventListener.onException(TCPConnection.this, e);
-                }
-                finally {
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                } finally {
                     eventListener.onDisconnect(TCPConnection.this);
                 }
             }
